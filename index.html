@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roteiro Família: Balneário Camboriú 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .tab-active { border-bottom: 3px solid #0d9488; color: #0d9488; font-weight: 700; }
+        .custom-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 leading-relaxed">
+
+    <!-- Header -->
+    <header class="bg-teal-700 text-white py-10 px-4 text-center">
+        <h1 class="text-3xl md:text-5xl font-bold mb-2">Expedição Balneário Camboriú</h1>
+        <p class="text-teal-100 text-lg max-w-2xl mx-auto italic">Planejamento Estratégico: 02 a 09 de Setembro de 2026</p>
+        <div class="mt-6 inline-flex flex-wrap justify-center items-center gap-4 bg-teal-800/50 px-6 py-2 rounded-2xl text-sm border border-teal-500/30">
+            <span>👨‍👩‍👧 Família: 2 Adultos + 1 Criança (3 anos)</span>
+            <span class="hidden md:inline text-teal-400">|</span>
+            <span>🏨 Slaviero Conceptual Brut</span>
+        </div>
+    </header>
+
+    <!-- Nav -->
+    <nav class="sticky top-0 bg-white/95 backdrop-blur-md border-b border-slate-200 z-50 overflow-x-auto no-scrollbar">
+        <div class="max-w-6xl mx-auto flex justify-between px-6 py-4 whitespace-nowrap gap-8 text-xs md:text-sm font-semibold uppercase">
+            <a href="#logistica" class="hover:text-teal-600 transition">Logística</a>
+            <a href="#roteiro" class="hover:text-teal-600 transition">Roteiro Oficial</a>
+            <a href="#orcamento" class="hover:text-teal-600 transition">Custos Ingressos</a>
+            <a href="#dicas" class="hover:text-teal-600 transition text-rose-600">Regras Importantes</a>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto p-4 md:p-8 space-y-12">
+
+        <!-- Seção de Logística -->
+        <section id="logistica" class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-2xl custom-shadow border border-slate-100">
+                <h3 class="flex items-center gap-2 text-teal-700 font-bold mb-4 uppercase text-sm">✈️ Chegada: Aeroporto Navegantes (NVT)</h3>
+                <ul class="text-sm space-y-2 text-slate-600">
+                    <li>• Distância: ~15-20km do centro de BC.</li>
+                    <li>• Vantagem: Evita o tráfego pesado da BR-101 via Florianópolis.</li>
+                    <li>• Transfer: Contratação privativa sugerida para conforto da criança.</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-2xl custom-shadow border border-slate-100">
+                <h3 class="flex items-center gap-2 text-teal-700 font-bold mb-4 uppercase text-sm">🏨 Hospedagem: Slaviero Brut</h3>
+                <ul class="text-sm space-y-2 text-slate-600">
+                    <li>• Localização: Rua 1901 (Pontal Norte).</li>
+                    <li>• Estratégia: Proximidade com FG Big Wheel e acesso fácil à orla.</li>
+                    <li>• Diferencial: Ambiente moderno e infraestrutura para famílias.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Roteiro Baseado no Documento (Item 8) -->
+        <section id="roteiro">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold">📅 Cronograma Operacional Sugerido</h2>
+            </div>
+            
+            <div class="bg-white rounded-3xl custom-shadow overflow-hidden border border-slate-100">
+                <div class="flex overflow-x-auto bg-slate-50 border-b border-slate-200 no-scrollbar">
+                    <button onclick="showDay(2)" id="btn2" class="tab-btn px-6 py-4 flex-shrink-0 transition tab-active">02/Set (D1)</button>
+                    <button onclick="showDay(3)" id="btn3" class="tab-btn px-6 py-4 flex-shrink-0 transition">03/Set (D2)</button>
+                    <button onclick="showDay(4)" id="btn4" class="tab-btn px-6 py-4 flex-shrink-0 transition">04/Set (D3)</button>
+                    <button onclick="showDay(5)" id="btn5" class="tab-btn px-6 py-4 flex-shrink-0 transition">05/Set (D4)</button>
+                    <button onclick="showDay(6)" id="btn6" class="tab-btn px-6 py-4 flex-shrink-0 transition">06/Set (D5)</button>
+                    <button onclick="showDay(7)" id="btn7" class="tab-btn px-6 py-4 flex-shrink-0 transition">07/Set (D6)</button>
+                    <button onclick="showDay(8)" id="btn8" class="tab-btn px-6 py-4 flex-shrink-0 transition">08/Set (D7)</button>
+                    <button onclick="showDay(9)" id="btn9" class="tab-btn px-6 py-4 flex-shrink-0 transition">09/Set (D8)</button>
+                </div>
+                <div class="p-6 md:p-8 min-h-[400px]" id="day-content">
+                    <!-- JS Injects Here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Orçamento Conforme Documento -->
+        <section id="orcamento" class="space-y-6">
+            <h2 class="text-2xl font-bold">💰 Análise de Custos (2A + 1C)</h2>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 bg-white rounded-2xl custom-shadow border border-slate-100 overflow-hidden">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-slate-50 text-slate-500 uppercase text-[10px] font-bold">
+                            <tr>
+                                <th class="p-4">Atração</th>
+                                <th class="p-4">Preço (A)</th>
+                                <th class="p-4">Criança (3a)</th>
+                                <th class="p-4 text-right">Total Família</th>
+                            </tr>
+                        </thead>
+                        <tbody id="price-table">
+                            <!-- JS Injects Here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-white p-6 rounded-2xl custom-shadow border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xs font-bold text-slate-400 uppercase mb-4 text-center">Distribuição de Gastos</h3>
+                        <div class="h-48">
+                            <canvas id="costChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-slate-100 text-center">
+                        <p class="text-slate-500 text-xs">Total Estimado em Ingressos</p>
+                        <p class="text-4xl font-bold text-teal-700" id="grand-total">R$ 0,00</p>
+                        <p class="text-[10px] text-rose-500 mt-2 font-bold uppercase">*Considerando preços promocionais online</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Informações Críticas -->
+        <section id="dicas" class="bg-rose-50 border border-rose-200 rounded-2xl p-6 md:p-8">
+            <h2 class="text-2xl font-bold text-rose-800 mb-6">⚠️ Informações Críticas do Planejamento</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-5 rounded-xl border border-rose-100">
+                    <h4 class="font-bold text-rose-700 mb-2">Beto Carrero (Exceção)</h4>
+                    <p class="text-sm text-slate-600 italic">No parque da Penha, a criança de 3 anos <strong>PAGA</strong> valor promocional integral. Garanta a compra 24h antes.</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-rose-100">
+                    <h4 class="font-bold text-rose-700 mb-2">Gratuidades em BC</h4>
+                    <p class="text-sm text-slate-600 italic">Unipraias, Multiparque, Summit e Big Wheel são <strong>gratuitos</strong> para 3 anos. Leve documento original (RG ou Certidão).</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-rose-100">
+                    <h4 class="font-bold text-rose-700 mb-2">Operação de Inverno</h4>
+                    <p class="text-sm text-slate-600 italic">O período de Setembro marca a transição climática. Considere o Multiparque para aproveitar as águas aquecidas.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-800 text-slate-400 py-12 px-4 text-center">
+        <p class="text-xs uppercase tracking-widest">Roteiro Estratégico de Férias • 2026</p>
+    </footer>
+
+    <script>
+        const schedule = {
+            2: {
+                title: "Chegada e Barra Norte",
+                items: [
+                    { t: "Manhã", act: "Traslado Navegantes/Hotel Brut", d: "Chegada ao Slaviero Brut para acomodação." },
+                    { t: "Almoço", act: "Dom Amado Restaurante", d: "Primeira refeição sugerida na região." },
+                    { t: "Tarde", act: "Caminhada Deck Norte", d: "Passeio pela passarela e fotos na Rua Torta." },
+                    { t: "Fim de Tarde", act: "FG Big Wheel", d: "Visita à roda gigante durante o pôr do sol." },
+                    { t: "Noite", act: "Tchellus Burger", d: "Jantar e descanso." }
+                ]
+            },
+            3: {
+                title: "Beto Carrero World",
+                items: [
+                    { t: "08:30", act: "Saída para Penha", d: "Viagem estratégica para o parque." },
+                    { t: "Dia Todo", act: "Parque Temático", d: "Foco em Triplikland, Mundo Animal e shows imperdíveis." },
+                    { t: "Noite", act: "Jantar no Besst Burger", d: "Retorno a BC para jantar." }
+                ]
+            },
+            4: {
+                title: "Circuito Oceanic e Cristo Luz",
+                items: [
+                    { t: "Manhã", act: "Oceanic Aquarium", d: "Exploração da fauna marinha." },
+                    { t: "Almoço", act: "Flor de Cerejeira", d: "Pausa estratégica para almoço." },
+                    { t: "Tarde", act: "Classic Car Show & Space Adventure", d: "Uso do passaporte combo para atrações temáticas." },
+                    { t: "Noite", act: "Cristo Luz", d: "Passeio utilizando o ônibus gratuito da atração." }
+                ]
+            },
+            5: {
+                title: "Lazer Aquático no Multiparque",
+                items: [
+                    { t: "Dia Todo", act: "Multiparque (Praia do Estaleirinho)", d: "Dia relaxante aproveitando as águas aquecidas." },
+                    { t: "Noite", act: "Black Pot Fondue", d: "Jantar especial de fondue." }
+                ]
+            },
+            6: {
+                title: "Natureza e Barco Pirata",
+                items: [
+                    { t: "Manhã", act: "Parque Unipraias", d: "Bondinho Barra Sul e visita à Floresta Fantástica." },
+                    { t: "Tarde", act: "Praia de Laranjeiras", d: "Retorno para a Barra Sul via Barco Pirata." },
+                    { t: "Noite", act: "Guaca Mole", d: "Jantar com culinária mexicana." }
+                ]
+            },
+            7: {
+                title: "Feriado: City Tour e Centro",
+                items: [
+                    { t: "Manhã", act: "City Tour (BC By Bus)", d: "Visão geral da cidade com segurança." },
+                    { t: "Almoço", act: "Passeio San Miguel", d: "Gastronomia em ambiente charmoso." },
+                    { t: "Tarde", act: "Compras Av. Brasil", d: "Visita à Há! Cucaria para o café da tarde." }
+                ]
+            },
+            8: {
+                title: "Aventura Jurássica e Summit BC",
+                items: [
+                    { t: "Manhã", act: "Aventura Jurássica", d: "Parque temático de dinossauros." },
+                    { t: "Tarde", act: "Summit BC", d: "Experiência no mirante de vidro panorâmico." },
+                    { t: "Fim de Tarde", act: "Aventura Pirata", d: "Visita à atração temática de pirataria." }
+                ]
+            },
+            9: {
+                title: "Despedida e Retorno",
+                items: [
+                    { t: "Manhã", act: "Caminhada Praia Central", d: "Último café e passeio pela orla." },
+                    { t: "Almoço", act: "Summer Bar ou Orla", d: "Refeição de despedida frente ao mar." },
+                    { t: "16:00", act: "Check-out e Traslado", d: "Saída para Navegantes (Voo às 19:00)." }
+                ]
+            }
+        };
+
+        const prices = [
+            { n: "Beto Carrero World", a: 149.90, c: 149.90, desc: "2A + 1C (Valor Promo)" },
+            { n: "Passaporte Diversão", a: 159.90, c: 0, desc: "5 atrações (2 Adultos)" },
+            { n: "Multiparque", a: 185.00, c: 0, desc: "2 Adultos" },
+            { n: "Summit BC", a: 109.90, c: 0, desc: "2 Adultos" },
+            { n: "Parque Unipraias", a: 80.00, c: 0, desc: "2 Adultos" },
+            { n: "Barco Pirata", a: 85.00, c: 0, desc: "2 Adultos" },
+            { n: "FG Big Wheel", a: 62.00, c: 0, desc: "2 Adultos" },
+            { n: "Cristo Luz", a: 80.00, c: 0, desc: "2 Adultos" }
+        ];
+
+        function showDay(d) {
+            const day = schedule[d];
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('tab-active'));
+            document.getElementById('btn' + d).classList.add('tab-active');
+
+            const container = document.getElementById('day-content');
+            container.innerHTML = `
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold text-teal-700">${day.title}</h3>
+                </div>
+                <div class="space-y-8 relative border-l-2 border-slate-100 ml-4 pl-8">
+                    ${day.items.map(i => `
+                        <div class="relative">
+                            <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-teal-500 border-4 border-white shadow-md"></div>
+                            <span class="text-xs font-bold text-slate-400 block mb-1 uppercase tracking-wider">${i.t}</span>
+                            <h4 class="font-bold text-lg text-slate-800">${i.act}</h4>
+                            <p class="text-slate-500 text-sm italic">${i.d}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function renderPrices() {
+            const body = document.getElementById('price-table');
+            let grandTotal = 0;
+            let chartLabels = [];
+            let chartValues = [];
+
+            prices.forEach(p => {
+                const total = (p.a * 2) + p.c;
+                grandTotal += total;
+                chartLabels.push(p.n);
+                chartValues.push(total);
+
+                body.innerHTML += `
+                    <tr class="border-b border-slate-50 hover:bg-slate-50 transition">
+                        <td class="p-4">
+                            <div class="font-bold text-slate-800">${p.n}</div>
+                            <div class="text-[10px] text-slate-400 uppercase">${p.desc}</div>
+                        </td>
+                        <td class="p-4 text-slate-600">R$ ${p.a.toFixed(2)}</td>
+                        <td class="p-4 font-semibold ${p.c > 0 ? 'text-rose-500' : 'text-teal-500'}">
+                            ${p.c > 0 ? 'R$ ' + p.c.toFixed(2) : 'GRÁTIS'}
+                        </td>
+                        <td class="p-4 text-right font-bold text-teal-700">R$ ${total.toFixed(2)}</td>
+                    </tr>
+                `;
+            });
+
+            document.getElementById('grand-total').innerText = `R$ ${grandTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+            
+            new Chart(document.getElementById('costChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: chartLabels,
+                    datasets: [{
+                        data: chartValues,
+                        backgroundColor: ['#0f766e', '#14b8a6', '#0284c7', '#38bdf8', '#6366f1', '#f43f5e', '#f59e0b', '#10b981'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    cutout: '70%'
+                }
+            });
+        }
+
+        window.onload = () => {
+            showDay(2);
+            renderPrices();
+        };
+    </script>
+</body>
+</html>
