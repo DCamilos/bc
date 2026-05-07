@@ -31,9 +31,10 @@
     <!-- Nav -->
     <nav class="sticky top-0 bg-white/95 backdrop-blur-md border-b border-slate-200 z-50 overflow-x-auto no-scrollbar">
         <div class="max-w-6xl mx-auto flex justify-between px-6 py-4 whitespace-nowrap gap-8 text-xs md:text-sm font-semibold uppercase">
-            <a href="#logistica" class="hover:text-teal-600 transition">Logística</a>
-            <a href="#roteiro" class="hover:text-teal-600 transition">Roteiro Oficial</a>
-            <a href="#orcamento" class="hover:text-teal-600 transition">Custos Ingressos</a>
+            <a href="#logistica" class="hover:text-teal-600 transition text-slate-500">Logística</a>
+            <a href="#roteiro" class="hover:text-teal-600 transition text-slate-500">Roteiro Oficial</a>
+            <a href="#clubes" class="hover:text-teal-600 transition text-teal-700 font-bold">Clubes de Desconto</a>
+            <a href="#orcamento" class="hover:text-teal-600 transition text-slate-500">Custos Ingressos</a>
             <a href="#dicas" class="hover:text-teal-600 transition text-rose-600">Regras Importantes</a>
         </div>
     </nav>
@@ -83,9 +84,88 @@
             </div>
         </section>
 
+        <!-- NOVA SEÇÃO: Clubes de Desconto -->
+        <section id="clubes" class="space-y-6 scroll-mt-24">
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-bold">🎟️ Comparativo de Programas de Desconto</h2>
+                <span class="hidden md:inline-block bg-teal-100 text-teal-800 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Análise Estratégica</span>
+            </div>
+
+            <div class="bg-white rounded-2xl custom-shadow border border-slate-200 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-slate-50 text-slate-500 uppercase text-[10px] font-bold">
+                            <tr>
+                                <th class="p-4 border-b">Atração / Restaurante</th>
+                                <th class="p-4 border-b text-center">Balneário Pass (BP)</th>
+                                <th class="p-4 border-b text-center">Prime Gourmet (PG)</th>
+                                <th class="p-4 border-b text-right">Mais Vantajoso</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <!-- Categorias de Atrações -->
+                            <tr class="bg-slate-50/50"><td colspan="4" class="px-4 py-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Atrações Principais</td></tr>
+                            <tr>
+                                <td class="p-4 font-medium">Oceanic Aquarium</td>
+                                <td class="p-4 text-center text-slate-500 italic">10% off</td>
+                                <td class="p-4 text-center text-teal-600 font-bold">Pague 1, Ganhe 1</td>
+                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PG (50% OFF)</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium">Beto Carrero World</td>
+                                <td class="p-4 text-center text-blue-600 font-bold italic">15% off (Ingresso)</td>
+                                <td class="p-4 text-center text-slate-400">Não p/ Individual*</td>
+                                <td class="p-4 text-right"><span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-[10px] font-bold">BALN. PASS</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium">FG Big Wheel / Summit BC</td>
+                                <td class="p-4 text-center text-slate-500 italic">10-13% off</td>
+                                <td class="p-4 text-center text-teal-600 font-bold">Pague 1, Ganhe 1</td>
+                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PG (50% OFF)</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium">Multiparque</td>
+                                <td class="p-4 text-center text-blue-600 font-bold italic">10% off (Ingresso)</td>
+                                <td class="p-4 text-center text-slate-400">Não p/ Ingresso**</td>
+                                <td class="p-4 text-right"><span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-[10px] font-bold">BALN. PASS</span></td>
+                            </tr>
+                            <!-- Categorias de Gastronomia -->
+                            <tr class="bg-slate-50/50"><td colspan="4" class="px-4 py-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Gastronomia (Destaques)</td></tr>
+                            <tr>
+                                <td class="p-4 font-medium italic">Dom Amado / Guacamole / Black Pot</td>
+                                <td class="p-4 text-center text-slate-400">---</td>
+                                <td class="p-4 text-center text-teal-600 font-bold">Pague 1, Ganhe 1</td>
+                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PG (50% OFF)</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium italic">Tchellus / Besst Burger / Flor de Cerejeira</td>
+                                <td class="p-4 text-center text-slate-400">---</td>
+                                <td class="p-4 text-center text-teal-600 font-bold">Pague 1, Ganhe 1</td>
+                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PG (50% OFF)</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-slate-800 text-slate-300 p-4 text-[10px] leading-relaxed">
+                    * O Prime Gourmet oferece voucher bônus que exige a compra de 1 ingresso + traslado para ganhar o segundo dia. ** O Prime Gourmet possui apenas traslados para o Multiparque, não o ingresso direto.
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-2xl border-l-4 border-teal-500 custom-shadow">
+                    <h4 class="font-bold text-teal-800 mb-2 flex items-center gap-2">🏆 Veredito Prime Gourmet</h4>
+                    <p class="text-sm text-slate-600">Para o seu perfil de <strong>casal (2 adultos)</strong>, é a opção imbatível. A economia de 50% em quase todos os jantares e atrações principais (Summit, Oceanic, Unipraias) faz com que o clube se pague já no segundo dia de uso.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-l-4 border-blue-500 custom-shadow">
+                    <h4 class="font-bold text-blue-800 mb-2 flex items-center gap-2">🎯 Veredito Balneário Pass</h4>
+                    <p class="text-sm text-slate-600">Sua vantagem é <strong>estratégica e pontual</strong>: use-o especificamente para os ingressos do <strong>Beto Carrero</strong> e <strong>Multiparque</strong>, onde o Prime não atua com o sistema "compre 1 ganhe 1".</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Orçamento Conforme Documento -->
-        <section id="orcamento" class="space-y-6">
-            <h2 class="text-2xl font-bold">💰 Análise de Custos (2A + 1C)</h2>
+        <section id="orcamento" class="space-y-6 scroll-mt-24">
+            <h2 class="text-2xl font-bold">💰 Análise de Custos Base (2A + 1C)</h2>
             <div class="grid lg:grid-cols-3 gap-8">
                 <div class="lg:col-span-2 bg-white rounded-2xl custom-shadow border border-slate-100 overflow-hidden">
                     <table class="w-full text-left text-sm">
@@ -112,14 +192,14 @@
                     <div class="mt-6 pt-6 border-t border-slate-100 text-center">
                         <p class="text-slate-500 text-xs">Total Estimado em Ingressos</p>
                         <p class="text-4xl font-bold text-teal-700" id="grand-total">R$ 0,00</p>
-                        <p class="text-[10px] text-rose-500 mt-2 font-bold uppercase">*Considerando preços promocionais online</p>
+                        <p class="text-[10px] text-rose-500 mt-2 font-bold uppercase">*Sem considerar os descontos dos clubes de benefícios</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Informações Críticas -->
-        <section id="dicas" class="bg-rose-50 border border-rose-200 rounded-2xl p-6 md:p-8">
+        <section id="dicas" class="bg-rose-50 border border-rose-200 rounded-2xl p-6 md:p-8 scroll-mt-24">
             <h2 class="text-2xl font-bold text-rose-800 mb-6">⚠️ Informações Críticas do Planejamento</h2>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="bg-white p-5 rounded-xl border border-rose-100">
@@ -276,7 +356,6 @@
 
             document.getElementById('grand-total').innerText = `R$ ${grandTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
             
-            // Gráfico de Gastos Otimizado
             const ctx = document.getElementById('costChart').getContext('2d');
             new Chart(ctx, {
                 type: 'doughnut',
@@ -296,9 +375,7 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    layout: {
-                        padding: 10
-                    },
+                    layout: { padding: 10 },
                     plugins: {
                         legend: {
                             display: true,
@@ -306,10 +383,7 @@
                             labels: {
                                 boxWidth: 10,
                                 padding: 15,
-                                font: {
-                                    size: 10,
-                                    family: 'Inter'
-                                }
+                                font: { size: 10, family: 'Inter' }
                             }
                         },
                         tooltip: {
