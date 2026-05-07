@@ -36,12 +36,13 @@
             <a href="#roteiro" class="hover:text-teal-600 transition text-slate-500">Roteiro Oficial</a>
             <a href="#clubes" class="hover:text-teal-600 transition text-slate-500">Clubes de Desconto</a>
             <a href="#orcamento" class="hover:text-teal-600 transition text-slate-500">Custos Ingressos</a>
+            <a href="#dicas" class="hover:text-teal-600 transition text-slate-500">Dicas Essenciais</a>
         </div>
     </nav>
 
     <main class="max-w-6xl mx-auto p-4 md:p-8 space-y-12">
 
-        <!-- Logística (Sessão Mantida) -->
+        <!-- Logística -->
         <section id="logistica" class="grid md:grid-cols-2 gap-6">
             <div class="bg-white p-6 rounded-2xl custom-shadow border border-slate-100">
                 <h3 class="flex items-center gap-2 text-teal-700 font-bold mb-4 uppercase text-sm">✈️ Chegada: Aeroporto Navegantes (NVT)</h3>
@@ -59,7 +60,7 @@
             </div>
         </section>
 
-        <!-- Roteiro Interativo (Sessão Mantida) -->
+        <!-- Roteiro Interativo -->
         <section id="roteiro">
             <div class="flex items-center justify-between mb-6">
                 <h2 class="text-2xl font-bold">📅 Cronograma Detalhado</h2>
@@ -81,7 +82,7 @@
             </div>
         </section>
 
-        <!-- Comparativo de Clubes (Sessão Mantida) -->
+        <!-- Comparativo de Clubes -->
         <section id="clubes" class="space-y-6 scroll-mt-24">
             <h2 class="text-2xl font-bold italic">🎟️ Planilha Comparativa de Programas</h2>
             <div class="bg-white rounded-2xl custom-shadow border border-slate-200 overflow-hidden">
@@ -95,15 +96,13 @@
                                 <th class="p-4 border-b text-right">Melhor Opção</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-slate-100" id="club-table-body">
-                            <!-- Injetado via JS para consistência de dados -->
-                        </tbody>
+                        <tbody class="divide-y divide-slate-100" id="club-table-body"></tbody>
                     </table>
                 </div>
             </div>
         </section>
 
-        <!-- Orçamento (Sessão Atualizada com dados do usuário) -->
+        <!-- Orçamento -->
         <section id="orcamento" class="space-y-6 scroll-mt-24">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
@@ -113,7 +112,6 @@
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Tabela Detalhada -->
                 <div class="lg:col-span-2 bg-white rounded-2xl custom-shadow border border-slate-100 overflow-hidden">
                     <div class="overflow-x-auto">
                         <table class="w-full text-left text-sm" id="price-table">
@@ -126,41 +124,96 @@
                                     <th class="p-4 text-center">Pré-compra?</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-slate-50">
-                                <!-- Preenchido via JS -->
-                            </tbody>
+                            <tbody class="divide-y divide-slate-50"></tbody>
                         </table>
                     </div>
                 </div>
 
-                <!-- Painel de Gráfico Comparativo -->
                 <div class="bg-white p-6 rounded-2xl custom-shadow border border-slate-100 flex flex-col">
                     <div class="text-center mb-6">
                         <h3 class="text-xs font-bold text-slate-400 uppercase mb-2 tracking-widest">Total Bruto Ingressos</h3>
                         <p class="text-4xl font-bold text-teal-700" id="grand-total">R$ 0,00</p>
                     </div>
-                    
                     <div class="flex-grow min-h-[250px] relative">
                         <canvas id="costComparisonChart"></canvas>
                     </div>
-                    
                     <div class="mt-6 space-y-3">
                         <div class="flex items-center justify-between text-xs p-3 bg-slate-50 rounded-xl">
-                            <span class="flex items-center gap-2 font-medium"><div class="w-2 h-2 bg-slate-400 rounded-full"></div> Sem Clube:</span>
+                            <span class="font-medium text-slate-700">Sem Clube:</span>
                             <span class="font-bold text-slate-700" id="txt-sem">R$ 0,00</span>
                         </div>
                         <div class="flex items-center justify-between text-xs p-3 bg-amber-50 rounded-xl border border-amber-100">
-                            <span class="flex items-center gap-2 font-medium"><div class="w-2 h-2 bg-amber-500 rounded-full"></div> Com Prime Gourmet:</span>
+                            <span class="font-medium text-amber-700">Com Prime Gourmet:</span>
                             <span class="font-bold text-amber-700" id="txt-prime">R$ 0,00</span>
                         </div>
                         <div class="flex items-center justify-between text-xs p-3 bg-blue-50 rounded-xl border border-blue-100">
-                            <span class="flex items-center gap-2 font-medium"><div class="w-2 h-2 bg-blue-500 rounded-full"></div> Com Balneário Pass:</span>
+                            <span class="font-medium text-blue-700">Com Balneário Pass:</span>
                             <span class="font-bold text-blue-700" id="txt-bp">R$ 0,00</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="mt-4 p-3 bg-teal-50 rounded-xl border border-teal-100 text-[10px] text-teal-800 leading-tight">
-                        <strong>Nota:</strong> O Prime Gourmet oferece economia máxima de 50% nas atrações participantes (2 adultos pagam apenas 1 ingresso).
+        <!-- Informações Importantes e Dicas Imprescindíveis -->
+        <section id="dicas" class="space-y-8 scroll-mt-24 pb-20">
+            <h2 class="text-2xl font-bold border-l-4 border-teal-600 pl-4 uppercase tracking-tight">💡 Informações Importantes & Dicas Estratégicas</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Clima e Malas -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="text-3xl mb-4">🌦️</div>
+                    <h3 class="font-bold text-slate-800 mb-2 uppercase text-xs">Clima em Setembro</h3>
+                    <p class="text-sm text-slate-600">Mês de transição. Espere manhãs e noites frescas (15°C a 18°C) e tardes podendo chegar aos 24°C. <strong>Veste por camadas:</strong> leve sempre um casaco leve para a criança, especialmente no Cristo Luz e Unipraias.</p>
+                </div>
+
+                <!-- Estratégia Feriado -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="text-3xl mb-4">🇧🇷</div>
+                    <h3 class="font-bold text-slate-800 mb-2 uppercase text-xs">Feriado de 07 de Setembro</h3>
+                    <p class="text-sm text-slate-600">A cidade lota. O <strong>BC By Bus</strong> pela manhã é a melhor forma de se locomover sem estresse de estacionamento. Evite grandes deslocamentos de carro no final da tarde, quando o fluxo de saída da praia trava a Avenida Atlântica.</p>
+                </div>
+
+                <!-- Logística com Criança -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="text-3xl mb-4">🧸</div>
+                    <h3 class="font-bold text-slate-800 mb-2 uppercase text-xs">Conforto Infantil</h3>
+                    <p class="text-sm text-slate-600">O <strong>Slaviero Brut</strong> tem excelente localização, permitindo voltas rápidas para sonecas se necessário. No Beto Carrero, considere alugar o carrinho logo na entrada para evitar cansaço excessivo da criança.</p>
+                </div>
+
+                <!-- Alimentação Prime Gourmet -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="text-3xl mb-4">🍽️</div>
+                    <h3 class="font-bold text-slate-800 mb-2 uppercase text-xs">Logística Gastronômica</h3>
+                    <p class="text-sm text-slate-600">No Prime Gourmet, a regra de ouro é: <strong>chegue cedo</strong>. Restaurantes como o Black Pot e Guaca Mole costumam ter filas de espera de mais de 1h em feriados. Tente jantar às 19h para garantir mesa rápida.</p>
+                </div>
+
+                <!-- Mobilidade e Estacionamento -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="text-3xl mb-4">🚗</div>
+                    <h3 class="font-bold text-slate-800 mb-2 uppercase text-xs">Uber vs Aluguel</h3>
+                    <p class="text-sm text-slate-600">Para trajetos internos em BC, o Uber funciona muito bem e poupa o custo/tempo de estacionar. Use o carro ou transfer apenas para <strong>Beto Carrero</strong> e <strong>Multiparque</strong>, que são mais distantes.</p>
+                </div>
+
+                <!-- Compras e Souvenirs -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="text-3xl mb-4">🛍️</div>
+                    <h3 class="font-bold text-slate-800 mb-2 uppercase text-xs">Avenida Brasil</h3>
+                    <p class="text-sm text-slate-600">O comércio da Av. Brasil é intenso. Se for comprar roupas de inverno ou marcas locais, reserve o dia 07 à tarde, mas prepare-se para o movimento. A <strong>Há! Cucaria</strong> é parada obrigatória para levar um doce típico para o hotel.</p>
+                </div>
+            </div>
+
+            <!-- Alerta de Reservas -->
+            <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-2xl">
+                <div class="flex gap-4">
+                    <div class="text-2xl">⚠️</div>
+                    <div>
+                        <h4 class="font-bold text-amber-900 uppercase text-xs mb-1">Checklist de Reservas Prévias</h4>
+                        <p class="text-sm text-amber-800 leading-relaxed">
+                            • <strong>Beto Carrero:</strong> Compre os ingressos com antecedência para evitar filas no guichê e garantir preços promocionais de 2026.<br>
+                            • <strong>Multiparque:</strong> Verifique as condições climáticas um dia antes para confirmar se todas as piscinas aquecidas estarão operantes.<br>
+                            • <strong>Transfer NVT:</strong> Agende o retorno com 4h de antecedência ao voo devido ao trânsito imprevisível na saída de BC.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -173,65 +226,64 @@
     </footer>
 
     <script>
-        // Dados das Atrações Conforme sua solicitação
         const priceData = [
-            { n: "Beto Carrero World", a: 149.90, c: 149.90, total: 449.70, pre: "Sim (promo)", prime: 449.70, bp: 382.25 }, // BP ~15%
-            { n: "Passaporte Diversão (5 atr.)", a: 159.90, c: 0, total: 319.80, pre: "Sim", prime: 159.90, bp: 287.82 }, // PG 50% (Paga 1, Ganha 1)
-            { n: "Multiparque", a: 185.00, c: 0, total: 370.00, pre: "Sim", prime: 370.00, bp: 333.00 }, // BP ~10%
-            { n: "Summit BC", a: 109.90, c: 0, total: 219.80, pre: "Sim", prime: 109.90, bp: 197.82 }, // PG 50%
-            { n: "Parque Unipraias (Bondinho)", a: 80.00, c: 0, total: 160.00, pre: "Não", prime: 80.00, bp: 144.00 }, // PG 50%
-            { n: "Barco Pirata", a: 85.00, c: 0, total: 170.00, pre: "Não", prime: 85.00, bp: 153.00 }, // PG 50%
-            { n: "FG Big Wheel", a: 62.00, c: 0, total: 124.00, pre: "Não", prime: 62.00, bp: 107.88 }, // PG 50%, BP 13%
-            { n: "Cristo Luz", a: 80.00, c: 0, total: 160.00, pre: "Não", prime: 80.00, bp: 136.00 } // PG 50%, BP 15%
+            { n: "Beto Carrero World", a: 149.90, c: 149.90, total: 449.70, pre: "Sim (promo)", prime: 449.70, bp: 382.25 },
+            { n: "Passaporte Diversão (5 atr.)", a: 159.90, c: 0, total: 319.80, pre: "Sim", prime: 159.90, bp: 287.82 },
+            { n: "Multiparque", a: 185.00, c: 0, total: 370.00, pre: "Sim", prime: 370.00, bp: 333.00 },
+            { n: "Summit BC", a: 109.90, c: 0, total: 219.80, pre: "Sim", prime: 109.90, bp: 197.82 },
+            { n: "Parque Unipraias (Bondinho)", a: 80.00, c: 0, total: 160.00, pre: "Não", prime: 80.00, bp: 144.00 },
+            { n: "Barco Pirata", a: 85.00, c: 0, total: 170.00, pre: "Não", prime: 85.00, bp: 153.00 },
+            { n: "FG Big Wheel", a: 62.00, c: 0, total: 124.00, pre: "Não", prime: 62.00, bp: 107.88 },
+            { n: "Cristo Luz", a: 80.00, c: 0, total: 160.00, pre: "Não", prime: 80.00, bp: 136.00 }
         ];
 
         const schedule = {
             2: { title: "02/09 – Chegada e Barra Norte", items: [
                 { t: "Manhã", act: "Traslado e Check-in", d: "Chegada no Aeroporto de Navegantes e deslocamento ao Hotel Brut." },
-                { t: "Almoço", act: "Dom Amado Restaurante", prime: "Não", d: "Restaurante próximo ao hotel." },
+                { t: "Almoço", act: "Dom Amado Restaurante", d: "Restaurante próximo ao hotel." },
                 { t: "Tarde", act: "Deck Norte e Rua Torta", d: "Caminhada relaxante e fotos." },
-                { t: "Fim de Tarde", act: "FG Big Wheel", prime: "Sim", d: "Pôr do sol na roda gigante (Utilize Prime Gourmet)." },
-                { t: "Noite", act: "Tchellus Burger", prime: "Sim", d: "Jantar na Barra Norte (Perto do Hotel)." }
+                { t: "Fim de Tarde", act: "FG Big Wheel", prime: "Sim", d: "Pôr do sol na roda gigante." },
+                { t: "Noite", act: "Tchellus Burger", prime: "Sim", d: "Jantar na Barra Norte." }
             ]},
             3: { title: "03/09 – Beto Carrero World", items: [
                 { t: "Manhã", act: "Saída para Penha", d: "Saída às 08:30. Foco em Triplikland e Mundo Animal." },
-                { t: "Almoço", act: "Praça de Alimentação BCW", d: "Pausa estratégica para shows." },
-                { t: "Noite", act: "Besst Burger", prime: "Sim", d: "Jantar de retorno em BC (Próximo ao hotel)." }
+                { t: "Almoço", act: "Praça de Alimentação BCW", d: "Pausa para shows." },
+                { t: "Noite", act: "Besst Burger", prime: "Sim", d: "Jantar de retorno em BC." }
             ]},
             4: { title: "04/09 – Circuito Oceanic e Cristo Luz", items: [
-                { t: "Manhã", act: "Oceanic Aquarium", prime: "Sim", d: "Exploração marinha (Utilize Prime Gourmet)." },
-                { t: "Almoço", act: "Flor de Cerejeira", prime: "Sim", d: "Almoço buffet por quilo próximo ao aquário." },
-                { t: "Tarde", act: "Classic Car Show & Space Adventure", d: "Combo de atrações tecnológicas e históricas." },
-                { t: "Noite", act: "Cristo Luz", d: "Vista noturna com o ônibus gratuito da atração." }
+                { t: "Manhã", act: "Oceanic Aquarium", prime: "Sim", d: "Exploração marinha." },
+                { t: "Almoço", act: "Flor de Cerejeira", prime: "Sim", d: "Almoço buffet próximo ao aquário." },
+                { t: "Tarde", act: "Classic Car Show & Space Adventure", d: "Combo de atrações." },
+                { t: "Noite", act: "Cristo Luz", d: "Vista noturna com o ônibus gratuito." }
             ]},
             5: { title: "05/09 – Lazer Aquático no Multiparque", items: [
-                { t: "Dia Todo", act: "Multiparque", d: "Praia do Estaleirinho. Águas aquecidas ideais para crianças." },
-                { t: "Almoço", act: "Galeto Mamma Mia", prime: "Sim", d: "Sugestão próxima ao Multiparque (Utilize Prime Gourmet)." },
-                { t: "Noite", act: "Black Pot Fondue", prime: "Sim", d: "Jantar de experiência no centro (Utilize Prime Gourmet)." }
+                { t: "Dia Todo", act: "Multiparque", d: "Águas aquecidas no Estaleirinho." },
+                { t: "Almoço", act: "Galeto Mamma Mia", prime: "Sim", d: "Próximo ao Multiparque." },
+                { t: "Noite", act: "Black Pot Fondue", prime: "Sim", d: "Jantar de experiência no centro." }
             ]},
             6: { title: "06/09 – Natureza e Barco Pirata", items: [
-                { t: "Manhã", act: "Bondinho Unipraias", prime: "Sim", d: "Visita à estação Mata Atlântica e Floresta Fantástica." },
-                { t: "Almoço", act: "Porto Camarões", prime: "Sim", d: "Sugestão na Barra Sul após o passeio (Utilize Prime Gourmet)." },
-                { t: "Tarde", act: "Laranjeiras e Barco Pirata", d: "Praia e retorno temático para a Barra Sul." },
-                { t: "Noite", act: "Guaca Mole", prime: "Sim", d: "Jantar temático mexicano na orla." }
+                { t: "Manhã", act: "Bondinho Unipraias", prime: "Sim", d: "Floresta Fantástica." },
+                { t: "Almoço", act: "Porto Camarões", prime: "Sim", d: "Sugestão na Barra Sul." },
+                { t: "Tarde", act: "Laranjeiras e Barco Pirata", d: "Retorno temático." },
+                { t: "Noite", act: "Guaca Mole", prime: "Sim", d: "Jantar temático mexicano." }
             ]},
             7: { title: "07/09 – Feriado: City Tour e Centro", items: [
-                { t: "Manhã", act: "City Tour BC By Bus", d: "Visão geral da cidade em ônibus panorâmico." },
-                { t: "Almoço", act: "Passeio San Miguel", d: "Boulevard gastronômico ao ar livre." },
-                { t: "Tarde", act: "Avenida Brasil & Há! Cucaria", prime: "Sim", d: "Compras e café colonial típico catarinense." },
-                { t: "Noite", act: "Miyazaki Sushi", prime: "Sim", d: "Sugestão de jantar no centro (Utilize Prime Gourmet)." }
+                { t: "Manhã", act: "City Tour BC By Bus", d: "Visão geral da cidade." },
+                { t: "Almoço", act: "Passeio San Miguel", d: "Boulevard gastronômico." },
+                { t: "Tarde", act: "Avenida Brasil & Há! Cucaria", prime: "Sim", d: "Compras e café colonial." },
+                { t: "Noite", act: "Miyazaki Sushi", prime: "Sim", d: "Sugestão de jantar no centro." }
             ]},
             8: { title: "08/09 – Aventura Jurássica e Summit BC", items: [
-                { t: "Manhã", act: "Aventura Jurássica", prime: "Sim", d: "Parque dos dinossauros (Utilize Prime Gourmet)." },
-                { t: "Almoço", act: "Restaurante Divino Fogão", prime: "Sim", d: "Sugestão de almoço rápido e prático próximo ao parque." },
-                { t: "Tarde", act: "Summit BC", prime: "Sim", d: "Mirante de vidro com vista panorâmica." },
-                { t: "Final Tarde", act: "Aventura Pirata", prime: "Sim", d: "Experiência interativa temática." },
-                { t: "Noite", act: "Restaurante Drummond", prime: "Sim", d: "Jantar de despedida elegante (Utilize Prime Gourmet)." }
+                { t: "Manhã", act: "Aventura Jurássica", prime: "Sim", d: "Parque dos dinossauros." },
+                { t: "Almoço", act: "Divino Fogão", prime: "Sim", d: "Próximo ao parque." },
+                { t: "Tarde", act: "Summit BC", prime: "Sim", d: "Mirante de vidro panorâmico." },
+                { t: "Final Tarde", act: "Aventura Pirata", prime: "Sim", d: "Experiência interativa." },
+                { t: "Noite", act: "Restaurante Drummond", prime: "Sim", d: "Jantar de despedida." }
             ]},
             9: { title: "09/09 – Despedida e Retorno", items: [
                 { t: "Manhã", act: "Caminhada Praia Central", d: "Último contato com a orla." },
-                { t: "Almoço", act: "Summer Bar", d: "Restaurante pé na areia na orla central." },
-                { t: "Tarde", act: "Check-out e Traslado", d: "Saída às 16:00 para Navegantes (Voo 19:00)." }
+                { t: "Almoço", act: "Summer Bar", d: "Pé na areia." },
+                { t: "Tarde", act: "Check-out e Traslado", d: "Saída às 16:00 para Navegantes." }
             ]}
         };
 
@@ -245,10 +297,11 @@
                 <div class="space-y-4">
                     ${day.items.map(i => `
                         <div class="bg-white p-4 rounded-xl border border-slate-200">
-                            <div class="flex justify-between">
+                            <div class="flex justify-between items-center">
                                 <span class="font-bold text-slate-800">${i.act}</span>
-                                ${i.prime === "Sim" ? `<span class="prime-badge">PRIME</span>` : ''}
+                                ${i.prime === "Sim" ? `<span class="prime-badge">PRIME GOURMET</span>` : ''}
                             </div>
+                            <p class="text-xs text-slate-500 mt-1 uppercase font-semibold">${i.t}</p>
                             <p class="text-xs text-slate-500">${i.d}</p>
                         </div>
                     `).join('')}
@@ -265,7 +318,6 @@
                 tPrime += p.prime;
                 tBP += p.bp;
 
-                // Tabela de Preços
                 tbody.innerHTML += `
                     <tr>
                         <td class="p-4 font-semibold text-slate-700">${p.n}</td>
@@ -278,7 +330,6 @@
                     </tr>
                 `;
 
-                // Tabela de Clubes (preenchimento automático da lógica)
                 const economPrime = ((1 - p.prime/p.total) * 100).toFixed(0);
                 clubBody.innerHTML += `
                     <tr>
@@ -315,8 +366,8 @@
                     maintainAspectRatio: false,
                     plugins: { legend: { display: false } },
                     scales: {
-                        y: { beginAtZero: true, grid: { display: false }, ticks: { font: { size: 10 } } },
-                        x: { grid: { display: false }, ticks: { font: { size: 10, weight: '600' } } }
+                        y: { beginAtZero: true, grid: { display: false } },
+                        x: { grid: { display: false } }
                     }
                 }
             });
