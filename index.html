@@ -186,14 +186,53 @@
         ];
 
         const schedule = {
-            2: { title: "Chegada e Barra Norte", items: [{ t: "Fim de Tarde", act: "FG Big Wheel", prime: "Sim", pDesc: "Pague 1, Leve 2", d: "Roda gigante vista mar." }] },
-            3: { title: "Beto Carrero World", items: [{ t: "Dia Todo", act: "Beto Carrero", prime: "Não", pDesc: "-", d: "Parque temático." }] },
-            4: { title: "Circuitos e Tecnologia", items: [{ t: "Tarde", act: "Oceanic Aquarium", prime: "Sim", pDesc: "Pague 1, Leve 2", d: "Visitando o aquário." }] },
-            5: { title: "Lazer Aquático", items: [{ t: "Dia Todo", act: "Multiparque", prime: "Não", pDesc: "-", d: "Águas aquecidas." }] },
-            6: { title: "Unipraias e Laranjeiras", items: [{ t: "Manhã", act: "Parque Unipraias", prime: "Sim", pDesc: "Pague 1, Leve 2", d: "Bondinho." }] },
-            7: { title: "Feriado", items: [{ t: "Manhã", act: "City Tour", prime: "Sim", pDesc: "Pague 1, Leve 2", d: "Conhecendo a cidade." }] },
-            8: { title: "Dinossauros", items: [{ t: "Manhã", act: "Aventura Jurássica", prime: "Sim", pDesc: "Pague 1, Leve 2", d: "Parque dos dinos." }] },
-            9: { title: "Check-out", items: [{ t: "Tarde", act: "Traslado", prime: "Sim", pDesc: "-", d: "Retorno NVT." }] }
+            2: { title: "02/09 – Chegada e Barra Norte", items: [
+                { t: "Manhã", act: "Traslado e Check-in", d: "Chegada no Aeroporto de Navegantes e deslocamento ao Hotel Brut." },
+                { t: "Almoço", act: "Dom Amado Restaurante", prime: "Não", d: "Restaurante próximo ao hotel." },
+                { t: "Tarde", act: "Deck Norte e Rua Torta", d: "Caminhada relaxante e fotos." },
+                { t: "Fim de Tarde", act: "FG Big Wheel", prime: "Sim", d: "Pôr do sol na roda gigante (Utilize Prime Gourmet)." },
+                { t: "Noite", act: "Tchellus Burger", prime: "Sim", d: "Jantar na Barra Norte (Perto do Hotel)." }
+            ]},
+            3: { title: "03/09 – Beto Carrero World", items: [
+                { t: "Manhã", act: "Saída para Penha", d: "Saída às 08:30. Foco em Triplikland e Mundo Animal." },
+                { t: "Almoço", act: "Praça de Alimentação BCW", d: "Pausa estratégica para shows." },
+                { t: "Noite", act: "Besst Burger", prime: "Sim", d: "Jantar de retorno em BC (Próximo ao hotel)." }
+            ]},
+            4: { title: "04/09 – Circuito Oceanic e Cristo Luz", items: [
+                { t: "Manhã", act: "Oceanic Aquarium", prime: "Sim", d: "Exploração marinha (Utilize Prime Gourmet)." },
+                { t: "Almoço", act: "Flor de Cerejeira", prime: "Sim", d: "Almoço buffet por quilo próximo ao aquário." },
+                { t: "Tarde", act: "Classic Car Show & Space Adventure", d: "Combo de atrações tecnológicas e históricas." },
+                { t: "Noite", act: "Cristo Luz", d: "Vista noturna com o ônibus gratuito da atração." }
+            ]},
+            5: { title: "05/09 – Lazer Aquático no Multiparque", items: [
+                { t: "Dia Todo", act: "Multiparque", d: "Praia do Estaleirinho. Águas aquecidas ideais para crianças." },
+                { t: "Almoço", act: "Galeto Mamma Mia", prime: "Sim", d: "Sugestão próxima ao Multiparque (Utilize Prime Gourmet)." },
+                { t: "Noite", act: "Black Pot Fondue", prime: "Sim", d: "Jantar de experiência no centro (Utilize Prime Gourmet)." }
+            ]},
+            6: { title: "06/09 – Natureza e Barco Pirata", items: [
+                { t: "Manhã", act: "Bondinho Unipraias", prime: "Sim", d: "Visita à estação Mata Atlântica e Floresta Fantástica." },
+                { t: "Almoço", act: "Porto Camarões", prime: "Sim", d: "Sugestão na Barra Sul após o passeio (Utilize Prime Gourmet)." },
+                { t: "Tarde", act: "Laranjeiras e Barco Pirata", d: "Praia e retorno temático para a Barra Sul." },
+                { t: "Noite", act: "Guaca Mole", prime: "Sim", d: "Jantar temático mexicano na orla." }
+            ]},
+            7: { title: "07/09 – Feriado: City Tour e Centro", items: [
+                { t: "Manhã", act: "City Tour BC By Bus", d: "Visão geral da cidade em ônibus panorâmico." },
+                { t: "Almoço", act: "Passeio San Miguel", d: "Boulevard gastronômico ao ar livre." },
+                { t: "Tarde", act: "Avenida Brasil & Há! Cucaria", prime: "Sim", d: "Compras e café colonial típico catarinense." },
+                { t: "Noite", act: "Miyazaki Sushi", prime: "Sim", d: "Sugestão de jantar no centro (Utilize Prime Gourmet)." }
+            ]},
+            8: { title: "08/09 – Aventura Jurássica e Summit BC", items: [
+                { t: "Manhã", act: "Aventura Jurássica", prime: "Sim", d: "Parque dos dinossauros (Utilize Prime Gourmet)." },
+                { t: "Almoço", act: "Restaurante Divino Fogão", prime: "Sim", d: "Sugestão de almoço rápido e prático próximo ao parque." },
+                { t: "Tarde", act: "Summit BC", prime: "Sim", d: "Mirante de vidro com vista panorâmica." },
+                { t: "Final Tarde", act: "Aventura Pirata", prime: "Sim", d: "Experiência interativa temática." },
+                { t: "Noite", act: "Restaurante Drummond", prime: "Sim", d: "Jantar de despedida elegante (Utilize Prime Gourmet)." }
+            ]},
+            9: { title: "09/09 – Despedida e Retorno", items: [
+                { t: "Manhã", act: "Caminhada Praia Central", d: "Último contato com a orla." },
+                { t: "Almoço", act: "Summer Bar", d: "Restaurante pé na areia na orla central." },
+                { t: "Tarde", act: "Check-out e Traslado", d: "Saída às 16:00 para Navegantes (Voo 19:00)." }
+            ]}
         };
 
         function showDay(d) {
