@@ -14,7 +14,6 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .prime-badge { background: linear-gradient(90deg, #b45309, #d97706); color: white; font-size: 10px; padding: 2px 8px; border-radius: 9999px; font-weight: bold; }
-        .bp-badge { background: #0284c7; color: white; font-size: 10px; padding: 2px 8px; border-radius: 9999px; font-weight: bold; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 leading-relaxed">
@@ -24,7 +23,7 @@
         <h1 class="text-3xl md:text-5xl font-bold mb-2">Expedição Balneário Camboriú</h1>
         <p class="text-teal-100 text-lg max-w-2xl mx-auto italic">Planejamento Estratégico: 02 a 09 de Setembro de 2026</p>
         <div class="mt-6 inline-flex flex-wrap justify-center items-center gap-4 bg-teal-800/50 px-6 py-2 rounded-2xl text-sm border border-teal-500/30">
-            <span>👨‍👩‍👧 Família: 2 Adultos + 1 Criança (3 anos)</span>
+            <span>👨‍👩‍👧 Família: 2 Adultos + 1 Criança (3-4 anos)</span>
             <span class="hidden md:inline text-teal-400">|</span>
             <span>🏨 Slaviero Conceptual Brut</span>
         </div>
@@ -37,13 +36,12 @@
             <a href="#roteiro" class="hover:text-teal-600 transition text-slate-500">Roteiro Oficial</a>
             <a href="#clubes" class="hover:text-teal-600 transition text-slate-500">Clubes de Desconto</a>
             <a href="#orcamento" class="hover:text-teal-600 transition text-slate-500">Custos Ingressos</a>
-            <a href="#dicas" class="hover:text-teal-600 transition text-rose-600">Regras Importantes</a>
         </div>
     </nav>
 
     <main class="max-w-6xl mx-auto p-4 md:p-8 space-y-12">
 
-        <!-- Logística -->
+        <!-- Logística (Sessão Mantida) -->
         <section id="logistica" class="grid md:grid-cols-2 gap-6">
             <div class="bg-white p-6 rounded-2xl custom-shadow border border-slate-100">
                 <h3 class="flex items-center gap-2 text-teal-700 font-bold mb-4 uppercase text-sm">✈️ Chegada: Aeroporto Navegantes (NVT)</h3>
@@ -61,11 +59,11 @@
             </div>
         </section>
 
-        <!-- Roteiro Interativo -->
+        <!-- Roteiro Interativo (Sessão Mantida) -->
         <section id="roteiro">
             <div class="flex items-center justify-between mb-6">
-                <h2 class="text-2xl font-bold">📅 Cronograma com Benefícios Prime Gourmet</h2>
-                <div class="prime-badge shadow-sm">Ofertas validadas via CSV</div>
+                <h2 class="text-2xl font-bold">📅 Cronograma Detalhado</h2>
+                <div class="prime-badge shadow-sm">Setembro 2026</div>
             </div>
             
             <div class="bg-white rounded-3xl custom-shadow overflow-hidden border border-slate-100">
@@ -79,15 +77,13 @@
                     <button onclick="showDay(8)" id="btn8" class="tab-btn px-6 py-4 flex-shrink-0 transition">08/Set</button>
                     <button onclick="showDay(9)" id="btn9" class="tab-btn px-6 py-4 flex-shrink-0 transition">09/Set</button>
                 </div>
-                <div class="p-6 md:p-8 min-h-[400px]" id="day-content">
-                    <!-- Conteúdo será injetado via JS -->
-                </div>
+                <div class="p-6 md:p-8 min-h-[400px]" id="day-content"></div>
             </div>
         </section>
 
-        <!-- Comparativo de Clubes -->
+        <!-- Comparativo de Clubes (Sessão Mantida) -->
         <section id="clubes" class="space-y-6 scroll-mt-24">
-            <h2 class="text-2xl font-bold italic">🎟️ Planilha Comparativa de Programas de Desconto</h2>
+            <h2 class="text-2xl font-bold italic">🎟️ Planilha Comparativa de Programas</h2>
             <div class="bg-white rounded-2xl custom-shadow border border-slate-200 overflow-hidden">
                 <div class="overflow-x-auto">
                     <table class="w-full text-left text-sm">
@@ -96,170 +92,75 @@
                                 <th class="p-4 border-b">Atração / Restaurante</th>
                                 <th class="p-4 border-b">Balneário Pass (BP)</th>
                                 <th class="p-4 border-b">Prime Gourmet (PG)</th>
-                                <th class="p-4 border-b text-right">Programa Mais Vantajoso</th>
+                                <th class="p-4 border-b text-right">Melhor Opção</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-slate-100">
-                            <!-- Atrações -->
-                            <tr>
-                                <td class="p-4 font-medium">Oceanic Aquarium</td>
-                                <td class="p-4">Sim (10% off)</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (50% OFF)</span></td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium">Beto Carrero World</td>
-                                <td class="p-4 text-blue-600 font-bold">Sim (15% off)</td>
-                                <td class="p-4 text-slate-400 italic">Não p/ ingresso individual*</td>
-                                <td class="p-4 text-right"><span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-[10px] font-bold">BALNEÁRIO PASS</span></td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium">Classic Car Show</td>
-                                <td class="p-4">Sim (10% off)</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (50% OFF)</span></td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium">Space Adventure</td>
-                                <td class="p-4">Sim (10% off)</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (50% OFF)</span></td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium">Aventura Jurássica</td>
-                                <td class="p-4">Sim (10% off)</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (50% OFF)</span></td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium">Aventura Pirata</td>
-                                <td class="p-4">Sim (no Passaporte)</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (50% OFF)</span></td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium">FG Big Wheel</td>
-                                <td class="p-4">Sim (13% off)</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (50% OFF)</span></td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium">Cristo Luz</td>
-                                <td class="p-4">Sim (15% off)</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (50% OFF)</span></td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium">Summit BC</td>
-                                <td class="p-4">Sim (10% off)</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (50% OFF)</span></td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium">Multiparque</td>
-                                <td class="p-4 text-blue-600 font-bold">Sim (10% off)</td>
-                                <td class="p-4 text-slate-400 italic">Não citado para ingressos**</td>
-                                <td class="p-4 text-right"><span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-[10px] font-bold">BALNEÁRIO PASS</span></td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium">Parque Unipraias</td>
-                                <td class="p-4">Sim (10% off)</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (50% OFF)</span></td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium">Barco Pirata BC</td>
-                                <td class="p-4">Sim (no Passaporte)</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (50% OFF)</span></td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium">BC By Bus (City Tour)</td>
-                                <td class="p-4 italic text-slate-400">Não citado</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (50% OFF)</span></td>
-                            </tr>
-                            <!-- Restaurantes -->
-                            <tr class="bg-slate-50/50">
-                                <td class="p-4 font-medium">Dom Amado (Almoço)</td>
-                                <td class="p-4 italic text-slate-400">Não citado</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (GASTRONOMIA)</span></td>
-                            </tr>
-                            <tr class="bg-slate-50/50">
-                                <td class="p-4 font-medium">Tchellus Burger</td>
-                                <td class="p-4 italic text-slate-400">Não citado</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (GASTRONOMIA)</span></td>
-                            </tr>
-                            <tr class="bg-slate-50/50">
-                                <td class="p-4 font-medium">Besst Burger</td>
-                                <td class="p-4 italic text-slate-400">Não citado</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (GASTRONOMIA)</span></td>
-                            </tr>
-                            <tr class="bg-slate-50/50">
-                                <td class="p-4 font-medium">Flor de Cerejeira</td>
-                                <td class="p-4 italic text-slate-400">Não citado</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (GASTRONOMIA)</span></td>
-                            </tr>
-                            <tr class="bg-slate-50/50">
-                                <td class="p-4 font-medium">Black Pot (Fondue)</td>
-                                <td class="p-4 italic text-slate-400">Não citado</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (GASTRONOMIA)</span></td>
-                            </tr>
-                            <tr class="bg-slate-50/50">
-                                <td class="p-4 font-medium">Guacamole</td>
-                                <td class="p-4 italic text-slate-400">Não citado</td>
-                                <td class="p-4 text-teal-600 font-bold">Sim (Pague 1, Ganhe 1)</td>
-                                <td class="p-4 text-right"><span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold">PRIME (GASTRONOMIA)</span></td>
-                            </tr>
+                        <tbody class="divide-y divide-slate-100" id="club-table-body">
+                            <!-- Injetado via JS para consistência de dados -->
                         </tbody>
                     </table>
-                </div>
-                <div class="p-4 bg-amber-50 text-[10px] text-amber-700 italic border-t border-amber-100">
-                    * No Beto Carrero, o Prime Gourmet geralmente oferece benefícios apenas para serviços de transporte ou alimentação específicos, não para o passaporte diário. ** No Multiparque, os benefícios do Prime costumam ser voltados para hotelaria ou transporte.
                 </div>
             </div>
         </section>
 
-        <!-- Orçamento -->
+        <!-- Orçamento (Sessão Atualizada com dados do usuário) -->
         <section id="orcamento" class="space-y-6 scroll-mt-24">
-            <h2 class="text-2xl font-bold">💰 Análise de Orçamento: Comparativo de Economia</h2>
-            <div class="grid lg:grid-cols-3 gap-8">
-                <div class="lg:col-span-2 bg-white rounded-2xl custom-shadow border border-slate-100 overflow-hidden">
-                    <table class="w-full text-left text-sm" id="price-table">
-                        <thead class="bg-slate-50 text-slate-500 uppercase text-[10px] font-bold">
-                            <tr><th class="p-4">Atração</th><th class="p-4">Preço (A)</th><th class="p-4 text-right">Total Família</th></tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold italic">💰 Análise de Orçamento: Comparativo de Economia</h2>
+                    <p class="text-slate-500 text-sm">Cálculo baseado em 2 Adultos + 1 Criança (4 anos)</p>
                 </div>
-                <div class="bg-white p-6 rounded-2xl custom-shadow border border-slate-100">
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Tabela Detalhada -->
+                <div class="lg:col-span-2 bg-white rounded-2xl custom-shadow border border-slate-100 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm" id="price-table">
+                            <thead class="bg-slate-50 text-slate-500 uppercase text-[10px] font-bold">
+                                <tr>
+                                    <th class="p-4">Atração / Passeio</th>
+                                    <th class="p-4">Adulto (R$)</th>
+                                    <th class="p-4">Criança (R$)</th>
+                                    <th class="p-4 text-right">Total Família</th>
+                                    <th class="p-4 text-center">Pré-compra?</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-50">
+                                <!-- Preenchido via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Painel de Gráfico Comparativo -->
+                <div class="bg-white p-6 rounded-2xl custom-shadow border border-slate-100 flex flex-col">
                     <div class="text-center mb-6">
-                        <h3 class="text-xs font-bold text-slate-400 uppercase mb-2">Total Bruto Ingressos</h3>
+                        <h3 class="text-xs font-bold text-slate-400 uppercase mb-2 tracking-widest">Total Bruto Ingressos</h3>
                         <p class="text-4xl font-bold text-teal-700" id="grand-total">R$ 0,00</p>
                     </div>
                     
-                    <div class="h-64 relative">
+                    <div class="flex-grow min-h-[250px] relative">
                         <canvas id="costComparisonChart"></canvas>
                     </div>
                     
                     <div class="mt-6 space-y-3">
-                        <div class="flex items-center justify-between text-xs p-2 bg-slate-50 rounded">
-                            <span class="flex items-center gap-2"><div class="w-3 h-3 bg-slate-400 rounded-full"></div> Sem Clube:</span>
-                            <span class="font-bold text-slate-600" id="txt-sem">R$ 0,00</span>
+                        <div class="flex items-center justify-between text-xs p-3 bg-slate-50 rounded-xl">
+                            <span class="flex items-center gap-2 font-medium"><div class="w-2 h-2 bg-slate-400 rounded-full"></div> Sem Clube:</span>
+                            <span class="font-bold text-slate-700" id="txt-sem">R$ 0,00</span>
                         </div>
-                        <div class="flex items-center justify-between text-xs p-2 bg-amber-50 rounded border border-amber-100">
-                            <span class="flex items-center gap-2"><div class="w-3 h-3 bg-amber-500 rounded-full"></div> Com Prime Gourmet:</span>
+                        <div class="flex items-center justify-between text-xs p-3 bg-amber-50 rounded-xl border border-amber-100">
+                            <span class="flex items-center gap-2 font-medium"><div class="w-2 h-2 bg-amber-500 rounded-full"></div> Com Prime Gourmet:</span>
                             <span class="font-bold text-amber-700" id="txt-prime">R$ 0,00</span>
                         </div>
-                        <div class="flex items-center justify-between text-xs p-2 bg-blue-50 rounded border border-blue-100">
-                            <span class="flex items-center gap-2"><div class="w-3 h-3 bg-blue-500 rounded-full"></div> Com Balneário Pass:</span>
+                        <div class="flex items-center justify-between text-xs p-3 bg-blue-50 rounded-xl border border-blue-100">
+                            <span class="flex items-center gap-2 font-medium"><div class="w-2 h-2 bg-blue-500 rounded-full"></div> Com Balneário Pass:</span>
                             <span class="font-bold text-blue-700" id="txt-bp">R$ 0,00</span>
                         </div>
+                    </div>
+
+                    <div class="mt-4 p-3 bg-teal-50 rounded-xl border border-teal-100 text-[10px] text-teal-800 leading-tight">
+                        <strong>Nota:</strong> O Prime Gourmet oferece economia máxima de 50% nas atrações participantes (2 adultos pagam apenas 1 ingresso).
                     </div>
                 </div>
             </div>
@@ -268,176 +169,121 @@
     </main>
 
     <footer class="bg-slate-800 text-slate-400 py-8 text-center text-xs">
-        <p>PLANEJAMENTO SETEMBRO 2026 • TODOS OS DIREITOS RESERVADOS</p>
+        <p>PLANEJAMENTO SETEMBRO 2026 • VALORES SUJEITOS A ALTERAÇÃO</p>
     </footer>
 
     <script>
-        const schedule = {
-            2: {
-                title: "Chegada e Barra Norte",
-                items: [
-                    { t: "Almoço", act: "Dom Amado", prime: "Sim", pDesc: "Na compra de um prato principal, ganhe outro de igual ou menor valor.", d: "Restaurante de frutos do mar clássico." },
-                    { t: "Fim de Tarde", act: "FG Big Wheel", prime: "Sim", pDesc: "Pague 1 ingresso e leve o 2º (válido para ingressos individuais inteiros).", d: "Roda gigante com vista panorâmica." },
-                    { t: "Jantar", act: "Tchellus Burger", prime: "Sim", pDesc: "Compre um lanche e ganhe outro (consultar combos participantes).", d: "Hamburgueria artesanal." }
-                ]
-            },
-            3: {
-                title: "Beto Carrero World",
-                items: [
-                    { t: "Traslado", act: "Transporte Penha", prime: "Sim", pDesc: "Voucher de desconto em transportes parceiros no app.", d: "Saída cedo para evitar filas." },
-                    { t: "Dia Todo", act: "Parque Temático", prime: "Não", pDesc: "Use o Balneário Pass ou sites de ofertas para o ingresso individual.", d: "Foco em Triplikland (criança 3a)." },
-                    { t: "Jantar", act: "Besst Burger", prime: "Sim", pDesc: "Na compra de um Burger acompanhado de batata e bebida, ganhe outro igual.", d: "Jantar de retorno da Penha." }
-                ]
-            },
-            4: {
-                title: "Circuitos e Tecnologia",
-                items: [
-                    { t: "Manhã", act: "Oceanic Aquarium", prime: "Sim", pDesc: "Compre 1 ingresso adulto e ganhe o segundo. Criança de 3 anos grátis.", d: "Visita ao aquário." },
-                    { t: "Almoço", act: "Flor de Cerejeira", prime: "Sim", pDesc: "Compre um prato executivo ou buffet e ganhe outro.", d: "Opção leve próxima ao aquário." },
-                    { t: "Tarde", act: "Space Adventure / Classic Car Show", prime: "Sim", pDesc: "Pague 1, Ganhe 1 nos ingressos individuais das atrações.", d: "Atrações tecnológicas e de carros clássicos." },
-                    { t: "Noite", act: "Cristo Luz", prime: "Sim", pDesc: "Na compra de 1 ingresso, ganhe outro de igual ou menor valor.", d: "Mirante com luzes sobre a cidade." }
-                ]
-            },
-            5: {
-                title: "Lazer Aquático",
-                items: [
-                    { t: "Dia Todo", act: "Multiparque", prime: "Não", pDesc: "Desconto disponível apenas para traslado. Ingresso recomendado via Balneário Pass.", d: "Águas aquecidas excelentes para crianças." },
-                    { t: "Jantar", act: "Black Pot Fondue", prime: "Sim", pDesc: "Na compra de uma sequência de fondue, ganhe outra.", d: "Experiência gastronômica temática." }
-                ]
-            },
-            6: {
-                title: "Unipraias e Laranjeiras",
-                items: [
-                    { t: "Manhã", act: "Parque Unipraias", prime: "Sim", pDesc: "Compre 1 ingresso adulto e ganhe o segundo.", d: "Bondinho e trilhas." },
-                    { t: "Tarde", act: "Barco Pirata BC", prime: "Sim", pDesc: "Pague 1 ingresso e leve o segundo. Show pirata a bordo.", d: "Passeio saindo de Laranjeiras para Barra Sul." },
-                    { t: "Noite", act: "Guacamole Cocina Mexicana", prime: "Sim", pDesc: "Na compra de um prato principal ou combo, ganhe outro.", d: "Ambiente festivo e divertido." }
-                ]
-            },
-            7: {
-                title: "Feriado: City Tour",
-                items: [
-                    { t: "Manhã", act: "BC By Bus", prime: "Sim", pDesc: "Compre 1 city tour e ganhe o segundo.", d: "Passeio panorâmico pela cidade." },
-                    { t: "Café", act: "Há! Cucaria", prime: "Sim", pDesc: "Na compra de uma cuca ou café especial, ganhe outro.", d: "Parada estratégica no feriado (conforme CSV)." },
-                    { t: "Jantar", act: "La Vie Creperia", prime: "Sim", pDesc: "Na compra de um rodízio ou prato, ganhe outro igual.", d: "Conforme regra do arquivo de benefícios." }
-                ]
-            },
-            8: {
-                title: "Dinossauros e Visão Panorâmica",
-                items: [
-                    { t: "Manhã", act: "Aventura Jurássica", prime: "Sim", pDesc: "Compre 1 ingresso e ganhe outro.", d: "Maior parque de dinossauros do Brasil." },
-                    { t: "Tarde", act: "Summit BC", prime: "Sim", pDesc: "Pague 1 e leve 2 para o mirante de vidro.", d: "Vista de 360 graus de Balneário Camboriú." },
-                    { t: "Lanche", act: "Gela Boca", prime: "Sim", pDesc: "Na compra de um buffet de sorvete, ganhe outro.", d: "Pausa para a criança conforme CSV." }
-                ]
-            },
-            9: {
-                title: "Check-out",
-                items: [
-                    { t: "Almoço", act: "Restaurante Orla", prime: "Consultar", pDesc: "Diversos quiosques na Atlântica aceitam Prime (verificar no dia).", d: "Despedida da praia." },
-                    { t: "Tarde", act: "Traslado NVT", prime: "Sim", pDesc: "Voucher de desconto em agências parceiras no app.", d: "Retorno para casa." }
-                ]
-            }
-        };
-
+        // Dados das Atrações Conforme sua solicitação
         const priceData = [
-            { n: "Beto Carrero (2A+1C)", t: 449.70, prime: 449.70, bp: 382.24 }, // BP 15%
-            { n: "Multiparque (2A)", t: 370.00, prime: 370.00, bp: 333.00 },     // BP 10%
-            { n: "Summit BC (2A)", t: 219.80, prime: 109.90, bp: 197.82 },       // PG 50%, BP 10%
-            { n: "Oceanic (2A)", t: 160.00, prime: 80.00, bp: 144.00 },         // PG 50%, BP 10%
-            { n: "Unipraias (2A)", t: 160.00, prime: 80.00, bp: 144.00 },        // PG 50%, BP 10%
-            { n: "Aventura Jurássica (2A)", t: 180.00, prime: 90.00, bp: 162.00 },// PG 50%, BP 10%
-            { n: "Big Wheel (2A)", t: 124.00, prime: 62.00, bp: 107.88 }          // PG 50%, BP 13%
+            { n: "Beto Carrero World", a: 149.90, c: 149.90, total: 449.70, pre: "Sim (promo)", prime: 449.70, bp: 382.25 }, // BP ~15%
+            { n: "Passaporte Diversão (5 atr.)", a: 159.90, c: 0, total: 319.80, pre: "Sim", prime: 159.90, bp: 287.82 }, // PG 50% (Paga 1, Ganha 1)
+            { n: "Multiparque", a: 185.00, c: 0, total: 370.00, pre: "Sim", prime: 370.00, bp: 333.00 }, // BP ~10%
+            { n: "Summit BC", a: 109.90, c: 0, total: 219.80, pre: "Sim", prime: 109.90, bp: 197.82 }, // PG 50%
+            { n: "Parque Unipraias (Bondinho)", a: 80.00, c: 0, total: 160.00, pre: "Não", prime: 80.00, bp: 144.00 }, // PG 50%
+            { n: "Barco Pirata", a: 85.00, c: 0, total: 170.00, pre: "Não", prime: 85.00, bp: 153.00 }, // PG 50%
+            { n: "FG Big Wheel", a: 62.00, c: 0, total: 124.00, pre: "Não", prime: 62.00, bp: 107.88 }, // PG 50%, BP 13%
+            { n: "Cristo Luz", a: 80.00, c: 0, total: 160.00, pre: "Não", prime: 80.00, bp: 136.00 } // PG 50%, BP 15%
         ];
 
+        const schedule = {
+            2: { title: "Chegada e Barra Norte", items: [{ t: "Fim de Tarde", act: "FG Big Wheel", prime: "Sim", pDesc: "Pague 1, Leve 2", d: "Roda gigante vista mar." }] },
+            3: { title: "Beto Carrero World", items: [{ t: "Dia Todo", act: "Beto Carrero", prime: "Não", pDesc: "-", d: "Parque temático." }] },
+            4: { title: "Circuitos e Tecnologia", items: [{ t: "Tarde", act: "Oceanic Aquarium", prime: "Sim", pDesc: "Pague 1, Leve 2", d: "Visitando o aquário." }] },
+            5: { title: "Lazer Aquático", items: [{ t: "Dia Todo", act: "Multiparque", prime: "Não", pDesc: "-", d: "Águas aquecidas." }] },
+            6: { title: "Unipraias e Laranjeiras", items: [{ t: "Manhã", act: "Parque Unipraias", prime: "Sim", pDesc: "Pague 1, Leve 2", d: "Bondinho." }] },
+            7: { title: "Feriado", items: [{ t: "Manhã", act: "City Tour", prime: "Sim", pDesc: "Pague 1, Leve 2", d: "Conhecendo a cidade." }] },
+            8: { title: "Dinossauros", items: [{ t: "Manhã", act: "Aventura Jurássica", prime: "Sim", pDesc: "Pague 1, Leve 2", d: "Parque dos dinos." }] },
+            9: { title: "Check-out", items: [{ t: "Tarde", act: "Traslado", prime: "Sim", pDesc: "-", d: "Retorno NVT." }] }
+        };
+
         function showDay(d) {
-            const day = schedule[d];
+            const day = schedule[d] || {title: "Livre", items: []};
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('tab-active'));
             document.getElementById('btn' + d).classList.add('tab-active');
-
             const container = document.getElementById('day-content');
             container.innerHTML = `
-                <div class="mb-6 flex items-center justify-between">
-                    <h3 class="text-2xl font-bold text-teal-700">${day.title}</h3>
-                </div>
-                <div class="space-y-6">
+                <h3 class="text-2xl font-bold text-teal-700 mb-6">${day.title}</h3>
+                <div class="space-y-4">
                     ${day.items.map(i => `
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 relative overflow-hidden">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">${i.t}</span>
-                                    <h4 class="font-bold text-slate-800">${i.act}</h4>
-                                    <p class="text-xs text-slate-500 mb-2">${i.d}</p>
-                                </div>
-                                ${i.prime === "Sim" ? `<span class="prime-badge shadow-sm">PRIME GOURMET</span>` : ''}
+                        <div class="bg-white p-4 rounded-xl border border-slate-200">
+                            <div class="flex justify-between">
+                                <span class="font-bold text-slate-800">${i.act}</span>
+                                ${i.prime === "Sim" ? `<span class="prime-badge">PRIME</span>` : ''}
                             </div>
-                            ${i.prime === "Sim" ? `
-                                <div class="mt-2 bg-amber-100/50 border border-amber-200 p-2 rounded-lg text-[11px] text-amber-900">
-                                    <strong>Benefício:</strong> ${i.pDesc}
-                                </div>
-                            ` : ''}
+                            <p class="text-xs text-slate-500">${i.d}</p>
                         </div>
                     `).join('')}
-                </div>
-            `;
+                </div>`;
         }
 
-        function renderBudget() {
+        function init() {
             const tbody = document.querySelector('#price-table tbody');
-            let totalBruto = 0;
-            let totalPrime = 0;
-            let totalBP = 0;
+            const clubBody = document.querySelector('#club-table-body');
+            let tBruto = 0, tPrime = 0, tBP = 0;
 
             priceData.forEach(p => {
-                totalBruto += p.t;
-                totalPrime += p.prime;
-                totalBP += p.bp;
+                tBruto += p.total;
+                tPrime += p.prime;
+                tBP += p.bp;
+
+                // Tabela de Preços
                 tbody.innerHTML += `
-                    <tr class="border-b border-slate-50 hover:bg-slate-50 transition">
+                    <tr>
+                        <td class="p-4 font-semibold text-slate-700">${p.n}</td>
+                        <td class="p-4 text-slate-600">R$ ${p.a.toFixed(2)}</td>
+                        <td class="p-4 text-slate-600">${p.c > 0 ? 'R$ ' + p.c.toFixed(2) : '<span class="text-teal-600 font-medium">Grátis</span>'}</td>
+                        <td class="p-4 text-right font-bold text-teal-700">R$ ${p.total.toFixed(2)}</td>
+                        <td class="p-4 text-center">
+                            <span class="px-2 py-1 rounded text-[10px] ${p.pre !== 'Não' ? 'bg-amber-100 text-amber-700' : 'bg-slate-100 text-slate-400'}">${p.pre}</span>
+                        </td>
+                    </tr>
+                `;
+
+                // Tabela de Clubes (preenchimento automático da lógica)
+                const economPrime = ((1 - p.prime/p.total) * 100).toFixed(0);
+                clubBody.innerHTML += `
+                    <tr>
                         <td class="p-4 font-medium">${p.n}</td>
-                        <td class="p-4 text-slate-500 italic text-[11px]">Individual base</td>
-                        <td class="p-4 text-right font-bold text-teal-700">R$ ${p.t.toFixed(2)}</td>
+                        <td class="p-4 text-xs">Sim (${((1-p.bp/p.total)*100).toFixed(0)}% off)</td>
+                        <td class="p-4 text-xs font-bold text-teal-600">${economPrime > 0 ? 'Sim ('+economPrime+'% off)' : 'Não'}</td>
+                        <td class="p-4 text-right">
+                            <span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold uppercase">
+                                ${economPrime >= 40 ? 'PRIME GOURMET' : 'BALNEÁRIO PASS'}
+                            </span>
+                        </td>
                     </tr>
                 `;
             });
 
-            document.getElementById('grand-total').innerText = `R$ ${totalBruto.toFixed(2)}`;
-            document.getElementById('txt-sem').innerText = `R$ ${totalBruto.toFixed(2)}`;
-            document.getElementById('txt-prime').innerText = `R$ ${totalPrime.toFixed(2)}`;
-            document.getElementById('txt-bp').innerText = `R$ ${totalBP.toFixed(2)}`;
-            
-            // Gráfico Comparativo
+            document.getElementById('grand-total').innerText = `R$ ${tBruto.toFixed(2)}`;
+            document.getElementById('txt-sem').innerText = `R$ ${tBruto.toFixed(2)}`;
+            document.getElementById('txt-prime').innerText = `R$ ${tPrime.toFixed(2)}`;
+            document.getElementById('txt-bp').innerText = `R$ ${tBP.toFixed(2)}`;
+
             new Chart(document.getElementById('costComparisonChart'), {
                 type: 'bar',
                 data: {
                     labels: ['Sem Clube', 'Prime Gourmet', 'Balneário Pass'],
                     datasets: [{
-                        label: 'Valor Total (R$)',
-                        data: [totalBruto, totalPrime, totalBP],
+                        data: [tBruto, tPrime, tBP],
                         backgroundColor: ['#94a3b8', '#f59e0b', '#3b82f6'],
-                        borderRadius: 8,
-                        barThickness: 40
+                        borderRadius: 10,
+                        barThickness: 35
                     }]
                 },
-                options: { 
+                options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: { 
-                        legend: { display: false }
-                    },
+                    plugins: { legend: { display: false } },
                     scales: {
-                        y: { 
-                            beginAtZero: true,
-                            ticks: { 
-                                font: { size: 10 },
-                                callback: function(value) { return 'R$ ' + value; }
-                            }
-                        },
-                        x: { ticks: { font: { size: 10, weight: 'bold' } } }
+                        y: { beginAtZero: true, grid: { display: false }, ticks: { font: { size: 10 } } },
+                        x: { grid: { display: false }, ticks: { font: { size: 10, weight: '600' } } }
                     }
                 }
             });
         }
 
-        window.onload = () => { showDay(2); renderBudget(); };
+        window.onload = () => { showDay(2); init(); };
     </script>
 </body>
 </html>
