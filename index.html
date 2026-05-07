@@ -79,32 +79,39 @@
             </div>
         </section>
 
-        <!-- Gráfico Comparativo -->
+        <!-- Gráfico Comparativo de Economia -->
         <section id="orcamento" class="space-y-6 scroll-mt-24">
-            <h2 class="text-2xl font-bold">💰 Comparativo de Investimento (Ingressos)</h2>
+            <h2 class="text-2xl font-bold uppercase tracking-tight text-slate-700">💰 Gráfico de Economia Total</h2>
             <div class="grid lg:grid-cols-2 gap-8 items-center bg-white p-8 rounded-3xl custom-shadow border border-slate-100">
+                <!-- Coluna do Gráfico -->
                 <div class="h-80 w-full">
                     <canvas id="comparisonChart"></canvas>
                 </div>
+                
+                <!-- Coluna de Resumo de Investimento -->
                 <div class="space-y-4">
-                    <h3 class="text-lg font-semibold text-slate-700">Análise de Viabilidade</h3>
-                    <p class="text-sm text-slate-500">O gráfico ao lado compara o custo total dos ingressos para 2 adultos nos principais pontos turísticos do roteiro.</p>
+                    <h3 class="text-lg font-semibold text-slate-700">Investimento Total em Ingressos</h3>
+                    <p class="text-sm text-slate-500">Comparativo direto de custos para 2 adultos utilizando as diferentes estratégias de desconto.</p>
+                    
                     <div class="space-y-3">
-                        <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl">
-                            <span class="text-sm font-medium">Preço sem Clube:</span>
-                            <span id="total-full" class="font-bold text-slate-700">R$ 0,00</span>
+                        <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl border border-slate-200">
+                            <span class="text-sm font-medium">Sem Clube (Valor Bruto):</span>
+                            <span id="total-full" class="font-bold text-slate-700 text-lg">R$ 0,00</span>
                         </div>
-                        <div class="flex justify-between items-center p-3 bg-teal-50 rounded-xl border border-teal-100">
-                            <span class="text-sm font-medium text-teal-800 italic font-bold">Com Prime Gourmet:</span>
-                            <span id="total-prime" class="font-bold text-teal-700">R$ 0,00</span>
+                        
+                        <div class="flex justify-between items-center p-4 bg-teal-50 rounded-xl border border-teal-200 ring-2 ring-teal-100">
+                            <span class="text-sm font-bold text-teal-800">Custo com Prime Gourmet:</span>
+                            <span id="total-prime" class="font-bold text-teal-700 text-xl">R$ 0,00</span>
                         </div>
+                        
                         <div class="flex justify-between items-center p-3 bg-blue-50 rounded-xl border border-blue-100">
-                            <span class="text-sm font-medium text-blue-800">Com Balneário Pass:</span>
-                            <span id="total-bp" class="font-bold text-slate-700">R$ 0,00</span>
+                            <span class="text-sm font-medium text-blue-800">Custo com Balneário Pass:</span>
+                            <span id="total-bp" class="font-bold text-blue-700 text-lg">R$ 0,00</span>
                         </div>
                     </div>
+
                     <div class="p-4 bg-amber-50 rounded-xl text-xs text-amber-700 border border-amber-100">
-                        <strong>Nota:</strong> O Prime Gourmet oferece a maior economia nas atrações onde o sistema "Pague 1, Ganhe 1" é aceito. O Balneário Pass é fundamental para o Beto Carrero e Multiparque, onde o Prime não atua em ingressos individuais.
+                        <strong>Nota Estratégica:</strong> Embora o Prime Gourmet ofereça a maior economia absoluta (50% no pague 1 leve 2), o Balneário Pass é necessário para atrações onde o Prime não atua em ingressos (Beto Carrero e Multiparque).
                     </div>
                 </div>
             </div>
@@ -115,7 +122,7 @@
     <script>
         // Base de dados das atrações para o gráfico (Preço p/ 2 adultos)
         const items = [
-            { n: "Beto Carrero", full: 299.80, pg: 299.80, bp: 254.83 }, // BP 15% off, PG não atua no ingresso
+            { n: "Beto Carrero", full: 299.80, pg: 299.80, bp: 254.83 }, // BP 15% off, PG não atua no ingresso individual
             { n: "FG Big Wheel", full: 124.00, pg: 62.00, bp: 107.88 }, // PG Pague 1 Leve 2, BP 13% off
             { n: "Oceanic Aquarium", full: 160.00, pg: 80.00, bp: 144.00 }, // PG Pague 1 Leve 2, BP 10% off
             { n: "Aventura Jurássica", full: 180.00, pg: 90.00, bp: 162.00 },
@@ -169,22 +176,32 @@
                 return acc;
             }, { full: 0, pg: 0, bp: 0 });
 
-            document.getElementById('total-full').innerText = `R$ ${totals.full.toFixed(2)}`;
-            document.getElementById('total-prime').innerText = `R$ ${totals.pg.toFixed(2)}`;
-            document.getElementById('total-bp').innerText = `R$ ${totals.bp.toFixed(2)}`;
+            document.getElementById('total-full').innerText = `R$ ${totals.full.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+            document.getElementById('total-prime').innerText = `R$ ${totals.pg.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+            document.getElementById('total-bp').innerText = `R$ ${totals.bp.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
 
-            // Gráfico de Barras
+            // Gráfico de Barras Comparativo
             const ctx = document.getElementById('comparisonChart').getContext('2d');
             new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Sem Clube', 'Prime Gourmet', 'Balneário Pass'],
+                    labels: ['Sem Clube (Full)', 'Prime Gourmet', 'Balneário Pass'],
                     datasets: [{
-                        label: 'Investimento Total (R$)',
+                        label: 'Gasto Total em Ingressos (R$)',
                         data: [totals.full, totals.pg, totals.bp],
-                        backgroundColor: ['#94a3b8', '#0d9488', '#3b82f6'],
-                        borderRadius: 12,
-                        borderWidth: 0
+                        backgroundColor: [
+                            '#94a3b8', // Cinza para o cheio
+                            '#0d9488', // Teal para o Prime
+                            '#3b82f6'  // Azul para o BP
+                        ],
+                        borderColor: [
+                            '#64748b',
+                            '#0f766e',
+                            '#2563eb'
+                        ],
+                        borderWidth: 2,
+                        borderRadius: 10,
+                        maxBarThickness: 70
                     }]
                 },
                 options: {
@@ -193,14 +210,27 @@
                     plugins: {
                         legend: { display: false },
                         tooltip: {
+                            backgroundColor: '#1e293b',
+                            titleFont: { size: 14 },
+                            bodyFont: { size: 14 },
                             callbacks: {
-                                label: (c) => ` R$ ${c.parsed.y.toFixed(2)}`
+                                label: (context) => ` R$ ${context.parsed.y.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`
                             }
                         }
                     },
                     scales: {
-                        y: { beginAtZero: true, grid: { display: false } },
-                        x: { grid: { display: false } }
+                        y: { 
+                            beginAtZero: true,
+                            grid: { color: '#f1f5f9' },
+                            ticks: { 
+                                callback: (value) => 'R$ ' + value,
+                                font: { size: 10 }
+                            }
+                        },
+                        x: { 
+                            grid: { display: false },
+                            ticks: { font: { weight: 'bold', size: 11 } }
+                        }
                     }
                 }
             });
@@ -213,10 +243,10 @@
                 tableBody.innerHTML += `
                     <tr>
                         <td class="p-4 font-medium">${i.n}</td>
-                        <td class="p-4 text-blue-600">R$ ${i.bp.toFixed(2)}</td>
-                        <td class="p-4 text-teal-600 font-bold">R$ ${i.pg.toFixed(2)}</td>
+                        <td class="p-4 text-blue-600">R$ ${i.bp.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</td>
+                        <td class="p-4 text-teal-600 font-bold">R$ ${i.pg.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</td>
                         <td class="p-4 text-right">
-                            <span class="bg-${color}-100 text-${color}-700 px-2 py-1 rounded text-[10px] font-bold uppercase">${best}</span>
+                            <span class="bg-${color}-100 text-${color}-700 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-tighter">${best}</span>
                         </td>
                     </tr>
                 `;
