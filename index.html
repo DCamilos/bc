@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,21 +9,49 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .tab-active { border-bottom: 3px solid #0d9488; color: #0d9488; font-weight: 700; }
-        .custom-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .prime-badge { background: linear-gradient(90deg, #b45309, #d97706); color: white; font-size: 10px; padding: 2px 8px; border-radius: 9999px; font-weight: bold; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .tab-active {
+            border-bottom: 3px solid #0d9488;
+            color: #0d9488;
+            font-weight: 700;
+        }
+
+        .custom-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .prime-badge {
+            background: linear-gradient(90deg, #b45309, #d97706);
+            color: white;
+            font-size: 10px;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            font-weight: bold;
+        }
     </style>
 </head>
+
 <body class="bg-slate-50 text-slate-800 leading-relaxed">
 
     <!-- Header -->
     <header class="bg-teal-700 text-white py-10 px-4 text-center">
         <h1 class="text-3xl md:text-5xl font-bold mb-2">Expedição Balneário Camboriú</h1>
-        <p class="text-teal-100 text-lg max-w-2xl mx-auto italic">Planejamento Estratégico: 02 a 09 de Setembro de 2026</p>
-        <div class="mt-6 inline-flex flex-wrap justify-center items-center gap-4 bg-teal-800/50 px-6 py-2 rounded-2xl text-sm border border-teal-500/30">
+        <p class="text-teal-100 text-lg max-w-2xl mx-auto italic">Planejamento Estratégico: 02 a 09 de Setembro de 2026
+        </p>
+        <div
+            class="mt-6 inline-flex flex-wrap justify-center items-center gap-4 bg-teal-800/50 px-6 py-2 rounded-2xl text-sm border border-teal-500/30">
             <span>👨‍👩‍👧 Família: 2 Adultos + 1 Criança (3-4 anos)</span>
             <span class="hidden md:inline text-teal-400">|</span>
             <span>🏨 Slaviero Conceptual Brut</span>
@@ -31,7 +60,8 @@
 
     <!-- Nav -->
     <nav class="sticky top-0 bg-white/95 backdrop-blur-md border-b border-slate-200 z-50 overflow-x-auto no-scrollbar">
-        <div class="max-w-6xl mx-auto flex justify-between px-6 py-4 whitespace-nowrap gap-8 text-xs md:text-sm font-semibold uppercase">
+        <div
+            class="max-w-6xl mx-auto flex justify-between px-6 py-4 whitespace-nowrap gap-8 text-xs md:text-sm font-semibold uppercase">
             <a href="#logistica" class="hover:text-teal-600 transition text-slate-500">Logística</a>
             <a href="#roteiro" class="hover:text-teal-600 transition text-slate-500">Roteiro Oficial</a>
             <a href="#clubes" class="hover:text-teal-600 transition text-slate-500">Clubes de Desconto</a>
@@ -45,14 +75,16 @@
         <!-- Logística -->
         <section id="logistica" class="grid md:grid-cols-2 gap-6">
             <div class="bg-white p-6 rounded-2xl custom-shadow border border-slate-100">
-                <h3 class="flex items-center gap-2 text-teal-700 font-bold mb-4 uppercase text-sm">✈️ Chegada: Aeroporto Navegantes (NVT)</h3>
+                <h3 class="flex items-center gap-2 text-teal-700 font-bold mb-4 uppercase text-sm">✈️ Chegada: Aeroporto
+                    Navegantes (NVT)</h3>
                 <ul class="text-sm space-y-2 text-slate-600">
                     <li>• Distância: ~15-20km de BC.</li>
                     <li>• Traslado: Recomendado privativo para o perfil familiar.</li>
                 </ul>
             </div>
             <div class="bg-white p-6 rounded-2xl custom-shadow border border-slate-100">
-                <h3 class="flex items-center gap-2 text-teal-700 font-bold mb-4 uppercase text-sm">🏨 Hospedagem: Slaviero Brut</h3>
+                <h3 class="flex items-center gap-2 text-teal-700 font-bold mb-4 uppercase text-sm">🏨 Hospedagem:
+                    Slaviero Brut</h3>
                 <ul class="text-sm space-y-2 text-slate-600">
                     <li>• Localização: Barra Norte, próximo à Big Wheel.</li>
                     <li>• Dica: Estratégico para evitar trânsito do centro sul.</li>
@@ -66,17 +98,25 @@
                 <h2 class="text-2xl font-bold">📅 Cronograma Detalhado</h2>
                 <div class="prime-badge shadow-sm">Setembro 2026</div>
             </div>
-            
+
             <div class="bg-white rounded-3xl custom-shadow overflow-hidden border border-slate-100">
                 <div class="flex overflow-x-auto bg-slate-50 border-b border-slate-200 no-scrollbar">
-                    <button onclick="showDay(2)" id="btn2" class="tab-btn px-6 py-4 flex-shrink-0 transition tab-active">02/Set</button>
-                    <button onclick="showDay(3)" id="btn3" class="tab-btn px-6 py-4 flex-shrink-0 transition">03/Set</button>
-                    <button onclick="showDay(4)" id="btn4" class="tab-btn px-6 py-4 flex-shrink-0 transition">04/Set</button>
-                    <button onclick="showDay(5)" id="btn5" class="tab-btn px-6 py-4 flex-shrink-0 transition">05/Set</button>
-                    <button onclick="showDay(6)" id="btn6" class="tab-btn px-6 py-4 flex-shrink-0 transition">06/Set</button>
-                    <button onclick="showDay(7)" id="btn7" class="tab-btn px-6 py-4 flex-shrink-0 transition">07/Set</button>
-                    <button onclick="showDay(8)" id="btn8" class="tab-btn px-6 py-4 flex-shrink-0 transition">08/Set</button>
-                    <button onclick="showDay(9)" id="btn9" class="tab-btn px-6 py-4 flex-shrink-0 transition">09/Set</button>
+                    <button onclick="showDay(2)" id="btn2"
+                        class="tab-btn px-6 py-4 flex-shrink-0 transition tab-active">02/Set</button>
+                    <button onclick="showDay(3)" id="btn3"
+                        class="tab-btn px-6 py-4 flex-shrink-0 transition">03/Set</button>
+                    <button onclick="showDay(4)" id="btn4"
+                        class="tab-btn px-6 py-4 flex-shrink-0 transition">04/Set</button>
+                    <button onclick="showDay(5)" id="btn5"
+                        class="tab-btn px-6 py-4 flex-shrink-0 transition">05/Set</button>
+                    <button onclick="showDay(6)" id="btn6"
+                        class="tab-btn px-6 py-4 flex-shrink-0 transition">06/Set</button>
+                    <button onclick="showDay(7)" id="btn7"
+                        class="tab-btn px-6 py-4 flex-shrink-0 transition">07/Set</button>
+                    <button onclick="showDay(8)" id="btn8"
+                        class="tab-btn px-6 py-4 flex-shrink-0 transition">08/Set</button>
+                    <button onclick="showDay(9)" id="btn9"
+                        class="tab-btn px-6 py-4 flex-shrink-0 transition">09/Set</button>
                 </div>
                 <div class="p-6 md:p-8 min-h-[400px]" id="day-content"></div>
             </div>
@@ -94,6 +134,9 @@
                                 <th class="p-4 border-b">Balneário Pass (BP)</th>
                                 <th class="p-4 border-b">Prime Gourmet (PG)</th>
                                 <th class="p-4 border-b text-right">Melhor Opção</th>
+                                <th class="p-4 border-b text-right">R$ Adulto</th>
+                                <th class="p-4 border-b text-right">R$ Criança</th>
+                                <th class="p-4 border-b text-right">R$ Total (2A+1C)</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-100" id="club-table-body"></tbody>
@@ -131,7 +174,8 @@
 
                 <div class="bg-white p-6 rounded-2xl custom-shadow border border-slate-100 flex flex-col">
                     <div class="text-center mb-6">
-                        <h3 class="text-xs font-bold text-slate-400 uppercase mb-2 tracking-widest">Total Bruto Ingressos</h3>
+                        <h3 class="text-xs font-bold text-slate-400 uppercase mb-2 tracking-widest">Total Bruto
+                            Ingressos</h3>
                         <p class="text-4xl font-bold text-teal-700" id="grand-total">R$ 0,00</p>
                     </div>
                     <div class="flex-grow min-h-[250px] relative">
@@ -142,11 +186,13 @@
                             <span class="font-medium text-slate-700">Sem Clube:</span>
                             <span class="font-bold text-slate-700" id="txt-sem">R$ 0,00</span>
                         </div>
-                        <div class="flex items-center justify-between text-xs p-3 bg-amber-50 rounded-xl border border-amber-100">
+                        <div
+                            class="flex items-center justify-between text-xs p-3 bg-amber-50 rounded-xl border border-amber-100">
                             <span class="font-medium text-amber-700">Com Prime Gourmet:</span>
                             <span class="font-bold text-amber-700" id="txt-prime">R$ 0,00</span>
                         </div>
-                        <div class="flex items-center justify-between text-xs p-3 bg-blue-50 rounded-xl border border-blue-100">
+                        <div
+                            class="flex items-center justify-between text-xs p-3 bg-blue-50 rounded-xl border border-blue-100">
                             <span class="font-medium text-blue-700">Com Balneário Pass:</span>
                             <span class="font-bold text-blue-700" id="txt-bp">R$ 0,00</span>
                         </div>
@@ -157,49 +203,62 @@
 
         <!-- Informações Importantes e Dicas Imprescindíveis -->
         <section id="dicas" class="space-y-8 scroll-mt-24 pb-20">
-            <h2 class="text-2xl font-bold border-l-4 border-teal-600 pl-4 uppercase tracking-tight">💡 Informações Importantes & Dicas Estratégicas</h2>
-            
+            <h2 class="text-2xl font-bold border-l-4 border-teal-600 pl-4 uppercase tracking-tight">💡 Informações
+                Importantes & Dicas Estratégicas</h2>
+
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Clima e Malas -->
                 <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
                     <div class="text-3xl mb-4">🌦️</div>
                     <h3 class="font-bold text-slate-800 mb-2 uppercase text-xs">Clima em Setembro</h3>
-                    <p class="text-sm text-slate-600">Mês de transição. Espere manhãs e noites frescas (15°C a 18°C) e tardes podendo chegar aos 24°C. <strong>Veste por camadas:</strong> leve sempre um casaco leve para a criança, especialmente no Cristo Luz e Unipraias.</p>
+                    <p class="text-sm text-slate-600">Mês de transição. Espere manhãs e noites frescas (15°C a 18°C) e
+                        tardes podendo chegar aos 24°C. <strong>Veste por camadas:</strong> leve sempre um casaco leve
+                        para a criança, especialmente no Cristo Luz e Unipraias.</p>
                 </div>
 
                 <!-- Estratégia Feriado -->
                 <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
                     <div class="text-3xl mb-4">🇧🇷</div>
                     <h3 class="font-bold text-slate-800 mb-2 uppercase text-xs">Feriado de 07 de Setembro</h3>
-                    <p class="text-sm text-slate-600">A cidade lota. O <strong>BC By Bus</strong> pela manhã é a melhor forma de se locomover sem estresse de estacionamento. Evite grandes deslocamentos de carro no final da tarde, quando o fluxo de saída da praia trava a Avenida Atlântica.</p>
+                    <p class="text-sm text-slate-600">A cidade lota. O <strong>BC By Bus</strong> pela manhã é a melhor
+                        forma de se locomover sem estresse de estacionamento. Evite grandes deslocamentos de carro no
+                        final da tarde, quando o fluxo de saída da praia trava a Avenida Atlântica.</p>
                 </div>
 
                 <!-- Logística com Criança -->
                 <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
                     <div class="text-3xl mb-4">🧸</div>
                     <h3 class="font-bold text-slate-800 mb-2 uppercase text-xs">Conforto Infantil</h3>
-                    <p class="text-sm text-slate-600">O <strong>Slaviero Brut</strong> tem excelente localização, permitindo voltas rápidas para sonecas se necessário. No Beto Carrero, considere alugar o carrinho logo na entrada para evitar cansaço excessivo da criança.</p>
+                    <p class="text-sm text-slate-600">O <strong>Slaviero Brut</strong> tem excelente localização,
+                        permitindo voltas rápidas para sonecas se necessário. No Beto Carrero, considere alugar o
+                        carrinho logo na entrada para evitar cansaço excessivo da criança.</p>
                 </div>
 
                 <!-- Alimentação Prime Gourmet -->
                 <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
                     <div class="text-3xl mb-4">🍽️</div>
                     <h3 class="font-bold text-slate-800 mb-2 uppercase text-xs">Logística Gastronômica</h3>
-                    <p class="text-sm text-slate-600">No Prime Gourmet, a regra de ouro é: <strong>chegue cedo</strong>. Restaurantes como o Black Pot e Guaca Mole costumam ter filas de espera de mais de 1h em feriados. Tente jantar às 19h para garantir mesa rápida.</p>
+                    <p class="text-sm text-slate-600">No Prime Gourmet, a regra de ouro é: <strong>chegue cedo</strong>.
+                        Restaurantes como o Black Pot e Guaca Mole costumam ter filas de espera de mais de 1h em
+                        feriados. Tente jantar às 19h para garantir mesa rápida.</p>
                 </div>
 
                 <!-- Mobilidade e Estacionamento -->
                 <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
                     <div class="text-3xl mb-4">🚗</div>
                     <h3 class="font-bold text-slate-800 mb-2 uppercase text-xs">Uber vs Aluguel</h3>
-                    <p class="text-sm text-slate-600">Para trajetos internos em BC, o Uber funciona muito bem e poupa o custo/tempo de estacionar. Use o carro ou transfer apenas para <strong>Beto Carrero</strong> e <strong>Multiparque</strong>, que são mais distantes.</p>
+                    <p class="text-sm text-slate-600">Para trajetos internos em BC, o Uber funciona muito bem e poupa o
+                        custo/tempo de estacionar. Use o carro ou transfer apenas para <strong>Beto Carrero</strong> e
+                        <strong>Multiparque</strong>, que são mais distantes.</p>
                 </div>
 
                 <!-- Compras e Souvenirs -->
                 <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
                     <div class="text-3xl mb-4">🛍️</div>
                     <h3 class="font-bold text-slate-800 mb-2 uppercase text-xs">Avenida Brasil</h3>
-                    <p class="text-sm text-slate-600">O comércio da Av. Brasil é intenso. Se for comprar roupas de inverno ou marcas locais, reserve o dia 07 à tarde, mas prepare-se para o movimento. A <strong>Há! Cucaria</strong> é parada obrigatória para levar um doce típico para o hotel.</p>
+                    <p class="text-sm text-slate-600">O comércio da Av. Brasil é intenso. Se for comprar roupas de
+                        inverno ou marcas locais, reserve o dia 07 à tarde, mas prepare-se para o movimento. A
+                        <strong>Há! Cucaria</strong> é parada obrigatória para levar um doce típico para o hotel.</p>
                 </div>
             </div>
 
@@ -210,9 +269,12 @@
                     <div>
                         <h4 class="font-bold text-amber-900 uppercase text-xs mb-1">Checklist de Reservas Prévias</h4>
                         <p class="text-sm text-amber-800 leading-relaxed">
-                            • <strong>Beto Carrero:</strong> Compre os ingressos com antecedência para evitar filas no guichê e garantir preços promocionais de 2026.<br>
-                            • <strong>Multiparque:</strong> Verifique as condições climáticas um dia antes para confirmar se todas as piscinas aquecidas estarão operantes.<br>
-                            • <strong>Transfer NVT:</strong> Agende o retorno com 4h de antecedência ao voo devido ao trânsito imprevisível na saída de BC.
+                            • <strong>Beto Carrero:</strong> Compre os ingressos com antecedência para evitar filas no
+                            guichê e garantir preços promocionais de 2026.<br>
+                            • <strong>Multiparque:</strong> Verifique as condições climáticas um dia antes para
+                            confirmar se todas as piscinas aquecidas estarão operantes.<br>
+                            • <strong>Transfer NVT:</strong> Agende o retorno com 4h de antecedência ao voo devido ao
+                            trânsito imprevisível na saída de BC.
                         </p>
                     </div>
                 </div>
@@ -238,57 +300,73 @@
         ];
 
         const schedule = {
-            2: { title: "02/09 – Chegada e Barra Norte", items: [
-                { t: "Manhã", act: "Traslado e Check-in", d: "Chegada no Aeroporto de Navegantes e deslocamento ao Hotel Brut." },
-                { t: "Almoço", act: "Dom Amado Restaurante", d: "Restaurante próximo ao hotel." },
-                { t: "Tarde", act: "Deck Norte e Rua Torta", d: "Caminhada relaxante e fotos." },
-                { t: "Fim de Tarde", act: "FG Big Wheel", prime: "Sim", d: "Pôr do sol na roda gigante." },
-                { t: "Noite", act: "Tchellus Burger", prime: "Sim", d: "Jantar na Barra Norte." }
-            ]},
-            3: { title: "03/09 – Beto Carrero World", items: [
-                { t: "Manhã", act: "Saída para Penha", d: "Saída às 08:30. Foco em Triplikland e Mundo Animal." },
-                { t: "Almoço", act: "Praça de Alimentação BCW", d: "Pausa para shows." },
-                { t: "Noite", act: "Besst Burger", prime: "Sim", d: "Jantar de retorno em BC." }
-            ]},
-            4: { title: "04/09 – Circuito Oceanic e Cristo Luz", items: [
-                { t: "Manhã", act: "Oceanic Aquarium", prime: "Sim", d: "Exploração marinha." },
-                { t: "Almoço", act: "Flor de Cerejeira", prime: "Sim", d: "Almoço buffet próximo ao aquário." },
-                { t: "Tarde", act: "Classic Car Show & Space Adventure", d: "Combo de atrações." },
-                { t: "Noite", act: "Cristo Luz", d: "Vista noturna com o ônibus gratuito." }
-            ]},
-            5: { title: "05/09 – Lazer Aquático no Multiparque", items: [
-                { t: "Dia Todo", act: "Multiparque", d: "Águas aquecidas no Estaleirinho." },
-                { t: "Almoço", act: "Galeto Mamma Mia", prime: "Sim", d: "Próximo ao Multiparque." },
-                { t: "Noite", act: "Black Pot Fondue", prime: "Sim", d: "Jantar de experiência no centro." }
-            ]},
-            6: { title: "06/09 – Natureza e Barco Pirata", items: [
-                { t: "Manhã", act: "Bondinho Unipraias", prime: "Sim", d: "Floresta Fantástica." },
-                { t: "Almoço", act: "Porto Camarões", prime: "Sim", d: "Sugestão na Barra Sul." },
-                { t: "Tarde", act: "Laranjeiras e Barco Pirata", d: "Retorno temático." },
-                { t: "Noite", act: "Guaca Mole", prime: "Sim", d: "Jantar temático mexicano." }
-            ]},
-            7: { title: "07/09 – Feriado: City Tour e Centro", items: [
-                { t: "Manhã", act: "City Tour BC By Bus", d: "Visão geral da cidade." },
-                { t: "Almoço", act: "Passeio San Miguel", d: "Boulevard gastronômico." },
-                { t: "Tarde", act: "Avenida Brasil & Há! Cucaria", prime: "Sim", d: "Compras e café colonial." },
-                { t: "Noite", act: "Miyazaki Sushi", prime: "Sim", d: "Sugestão de jantar no centro." }
-            ]},
-            8: { title: "08/09 – Aventura Jurássica e Summit BC", items: [
-                { t: "Manhã", act: "Aventura Jurássica", prime: "Sim", d: "Parque dos dinossauros." },
-                { t: "Almoço", act: "Divino Fogão", prime: "Sim", d: "Próximo ao parque." },
-                { t: "Tarde", act: "Summit BC", prime: "Sim", d: "Mirante de vidro panorâmico." },
-                { t: "Final Tarde", act: "Aventura Pirata", prime: "Sim", d: "Experiência interativa." },
-                { t: "Noite", act: "Restaurante Drummond", prime: "Sim", d: "Jantar de despedida." }
-            ]},
-            9: { title: "09/09 – Despedida e Retorno", items: [
-                { t: "Manhã", act: "Caminhada Praia Central", d: "Último contato com a orla." },
-                { t: "Almoço", act: "Summer Bar", d: "Pé na areia." },
-                { t: "Tarde", act: "Check-out e Traslado", d: "Saída às 16:00 para Navegantes." }
-            ]}
+            2: {
+                title: "02/09 – Chegada e Barra Norte", items: [
+                    { t: "Manhã", act: "Traslado e Check-in", d: "Chegada no Aeroporto de Navegantes e deslocamento ao Hotel Brut." },
+                    { t: "Almoço", act: "Dom Amado Restaurante", d: "Restaurante próximo ao hotel." },
+                    { t: "Tarde", act: "Deck Norte e Rua Torta", d: "Caminhada relaxante e fotos." },
+                    { t: "Fim de Tarde", act: "FG Big Wheel", prime: "Sim", d: "Pôr do sol na roda gigante." },
+                    { t: "Noite", act: "Tchellus Burger", prime: "Sim", d: "Jantar na Barra Norte." }
+                ]
+            },
+            3: {
+                title: "03/09 – Beto Carrero World", items: [
+                    { t: "Manhã", act: "Saída para Penha", d: "Saída às 08:30. Foco em Triplikland e Mundo Animal." },
+                    { t: "Almoço", act: "Praça de Alimentação BCW", d: "Pausa para shows." },
+                    { t: "Noite", act: "Besst Burger", prime: "Sim", d: "Jantar de retorno em BC." }
+                ]
+            },
+            4: {
+                title: "04/09 – Circuito Oceanic e Cristo Luz", items: [
+                    { t: "Manhã", act: "Oceanic Aquarium", prime: "Sim", d: "Exploração marinha." },
+                    { t: "Almoço", act: "Flor de Cerejeira", prime: "Sim", d: "Almoço buffet próximo ao aquário." },
+                    { t: "Tarde", act: "Classic Car Show & Space Adventure", d: "Combo de atrações." },
+                    { t: "Noite", act: "Cristo Luz", d: "Vista noturna com o ônibus gratuito." }
+                ]
+            },
+            5: {
+                title: "05/09 – Lazer Aquático no Multiparque", items: [
+                    { t: "Dia Todo", act: "Multiparque", d: "Águas aquecidas no Estaleirinho." },
+                    { t: "Almoço", act: "Galeto Mamma Mia", prime: "Sim", d: "Próximo ao Multiparque." },
+                    { t: "Noite", act: "Black Pot Fondue", prime: "Sim", d: "Jantar de experiência no centro." }
+                ]
+            },
+            6: {
+                title: "06/09 – Natureza e Barco Pirata", items: [
+                    { t: "Manhã", act: "Bondinho Unipraias", prime: "Sim", d: "Floresta Fantástica." },
+                    { t: "Almoço", act: "Porto Camarões", prime: "Sim", d: "Sugestão na Barra Sul." },
+                    { t: "Tarde", act: "Laranjeiras e Barco Pirata", d: "Retorno temático." },
+                    { t: "Noite", act: "Guaca Mole", prime: "Sim", d: "Jantar temático mexicano." }
+                ]
+            },
+            7: {
+                title: "07/09 – Feriado: City Tour e Centro", items: [
+                    { t: "Manhã", act: "City Tour BC By Bus", d: "Visão geral da cidade." },
+                    { t: "Almoço", act: "Passeio San Miguel", d: "Boulevard gastronômico." },
+                    { t: "Tarde", act: "Avenida Brasil & Há! Cucaria", prime: "Sim", d: "Compras e café colonial." },
+                    { t: "Noite", act: "Miyazaki Sushi", prime: "Sim", d: "Sugestão de jantar no centro." }
+                ]
+            },
+            8: {
+                title: "08/09 – Aventura Jurássica e Summit BC", items: [
+                    { t: "Manhã", act: "Aventura Jurássica", prime: "Sim", d: "Parque dos dinossauros." },
+                    { t: "Almoço", act: "Divino Fogão", prime: "Sim", d: "Próximo ao parque." },
+                    { t: "Tarde", act: "Summit BC", prime: "Sim", d: "Mirante de vidro panorâmico." },
+                    { t: "Final Tarde", act: "Aventura Pirata", prime: "Sim", d: "Experiência interativa." },
+                    { t: "Noite", act: "Restaurante Drummond", prime: "Sim", d: "Jantar de despedida." }
+                ]
+            },
+            9: {
+                title: "09/09 – Despedida e Retorno", items: [
+                    { t: "Manhã", act: "Caminhada Praia Central", d: "Último contato com a orla." },
+                    { t: "Almoço", act: "Summer Bar", d: "Pé na areia." },
+                    { t: "Tarde", act: "Check-out e Traslado", d: "Saída às 16:00 para Navegantes." }
+                ]
+            }
         };
 
         function showDay(d) {
-            const day = schedule[d] || {title: "Livre", items: []};
+            const day = schedule[d] || { title: "Livre", items: [] };
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('tab-active'));
             document.getElementById('btn' + d).classList.add('tab-active');
             const container = document.getElementById('day-content');
@@ -330,12 +408,12 @@
                     </tr>
                 `;
 
-                const economPrime = ((1 - p.prime/p.total) * 100).toFixed(0);
+                const economPrime = ((1 - p.prime / p.total) * 100).toFixed(0);
                 clubBody.innerHTML += `
                     <tr>
                         <td class="p-4 font-medium">${p.n}</td>
-                        <td class="p-4 text-xs">Sim (${((1-p.bp/p.total)*100).toFixed(0)}% off)</td>
-                        <td class="p-4 text-xs font-bold text-teal-600">${economPrime > 0 ? 'Sim ('+economPrime+'% off)' : 'Não'}</td>
+                        <td class="p-4 text-xs">Sim (${((1 - p.bp / p.total) * 100).toFixed(0)}% off)</td>
+                        <td class="p-4 text-xs font-bold text-teal-600">${economPrime > 0 ? 'Sim (' + economPrime + '% off)' : 'Não'}</td>
                         <td class="p-4 text-right">
                             <span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold uppercase">
                                 ${economPrime >= 40 ? 'PRIME GOURMET' : 'BALNEÁRIO PASS'}
@@ -376,4 +454,5 @@
         window.onload = () => { showDay(2); init(); };
     </script>
 </body>
+
 </html>
