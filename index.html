@@ -124,7 +124,10 @@
 
         <!-- Comparativo de Clubes -->
         <section id="clubes" class="space-y-6 scroll-mt-24">
+            <div>
             <h2 class="text-2xl font-bold italic">🎟️ Planilha Comparativa de Programas</h2>
+            <p class="text-slate-500 text-sm">Cálculo baseado em 2 Adultos + 1 Criança (4 anos)</p>
+            </div>
             <div class="bg-white rounded-2xl custom-shadow border border-slate-200 overflow-hidden">
                 <div class="overflow-x-auto">
                     <table class="w-full text-left text-sm">
@@ -145,57 +148,42 @@
             </div>
         </section>
 
-        <!-- Orçamento -->
+        <!-- Orçamento - Gráficos -->
         <section id="orcamento" class="space-y-6 scroll-mt-24">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-                <div>
-                    <h2 class="text-2xl font-bold italic">💰 Análise de Orçamento: Comparativo de Economia</h2>
-                    <p class="text-slate-500 text-sm">Cálculo baseado em 2 Adultos + 1 Criança (4 anos)</p>
+            <div class="bg-white p-8 rounded-2xl custom-shadow border border-slate-100">
+                <div class="text-center mb-8">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase mb-2 tracking-widest">Total Bruto
+                        Ingressos</h3>
+                    <p class="text-5xl font-bold text-teal-700" id="grand-total">R$ 0,00</p>
                 </div>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-8">
-                <div class="lg:col-span-2 bg-white rounded-2xl custom-shadow border border-slate-100 overflow-hidden">
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left text-sm" id="price-table">
-                            <thead class="bg-slate-50 text-slate-500 uppercase text-[10px] font-bold">
-                                <tr>
-                                    <th class="p-4">Atração / Passeio</th>
-                                    <th class="p-4">Adulto (R$)</th>
-                                    <th class="p-4">Criança (R$)</th>
-                                    <th class="p-4 text-right">Total Família</th>
-                                    <th class="p-4 text-center">Pré-compra?</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-slate-50"></tbody>
-                        </table>
+                <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                    <div class="h-[280px] relative">
+                        <h4 class="text-sm font-semibold text-slate-600 mb-4 text-center">Comparativo por Programa</h4>
+                        <div class="h-[240px]">
+                            <canvas id="costComparisonChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="h-[280px] relative">
+                        <h4 class="text-sm font-semibold text-slate-600 mb-4 text-center">Representatividade por Atração</h4>
+                        <div class="h-[240px]">
+                            <canvas id="distributionChart"></canvas>
+                        </div>
                     </div>
                 </div>
-
-                <div class="bg-white p-6 rounded-2xl custom-shadow border border-slate-100 flex flex-col">
-                    <div class="text-center mb-6">
-                        <h3 class="text-xs font-bold text-slate-400 uppercase mb-2 tracking-widest">Total Bruto
-                            Ingressos</h3>
-                        <p class="text-4xl font-bold text-teal-700" id="grand-total">R$ 0,00</p>
+                <div class="mt-8 grid md:grid-cols-3 gap-4">
+                    <div class="flex items-center justify-between text-sm p-4 bg-slate-50 rounded-xl">
+                        <span class="font-medium text-slate-700">Sem Clube:</span>
+                        <span class="font-bold text-slate-700" id="txt-sem">R$ 0,00</span>
                     </div>
-                    <div class="flex-grow min-h-[250px] relative">
-                        <canvas id="costComparisonChart"></canvas>
+                    <div
+                        class="flex items-center justify-between text-sm p-4 bg-amber-50 rounded-xl border border-amber-100">
+                        <span class="font-medium text-amber-700">Com Prime Gourmet:</span>
+                        <span class="font-bold text-amber-700" id="txt-prime">R$ 0,00</span>
                     </div>
-                    <div class="mt-6 space-y-3">
-                        <div class="flex items-center justify-between text-xs p-3 bg-slate-50 rounded-xl">
-                            <span class="font-medium text-slate-700">Sem Clube:</span>
-                            <span class="font-bold text-slate-700" id="txt-sem">R$ 0,00</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-xs p-3 bg-amber-50 rounded-xl border border-amber-100">
-                            <span class="font-medium text-amber-700">Com Prime Gourmet:</span>
-                            <span class="font-bold text-amber-700" id="txt-prime">R$ 0,00</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-xs p-3 bg-blue-50 rounded-xl border border-blue-100">
-                            <span class="font-medium text-blue-700">Com Balneário Pass:</span>
-                            <span class="font-bold text-blue-700" id="txt-bp">R$ 0,00</span>
-                        </div>
+                    <div
+                        class="flex items-center justify-between text-sm p-4 bg-blue-50 rounded-xl border border-blue-100">
+                        <span class="font-medium text-blue-700">Com Balneário Pass:</span>
+                        <span class="font-bold text-blue-700" id="txt-bp">R$ 0,00</span>
                     </div>
                 </div>
             </div>
@@ -389,7 +377,6 @@
         }
 
         function init() {
-            const tbody = document.querySelector('#price-table tbody');
             const clubBody = document.querySelector('#club-table-body');
             let tBruto = 0, tPrime = 0, tBP = 0;
 
@@ -398,24 +385,16 @@
                 tPrime += p.prime;
                 tBP += p.bp;
 
-                tbody.innerHTML += `
-                    <tr>
-                        <td class="p-4 font-semibold text-slate-700">${p.n}</td>
-                        <td class="p-4 text-slate-600">R$ ${p.a.toFixed(2)}</td>
-                        <td class="p-4 text-slate-600">${p.c > 0 ? 'R$ ' + p.c.toFixed(2) : '<span class="text-teal-600 font-medium">Grátis</span>'}</td>
-                        <td class="p-4 text-right font-bold text-teal-700">R$ ${p.total.toFixed(2)}</td>
-                        <td class="p-4 text-center">
-                            <span class="px-2 py-1 rounded text-[10px] ${p.pre !== 'Não' ? 'bg-amber-100 text-amber-700' : 'bg-slate-100 text-slate-400'}">${p.pre}</span>
-                        </td>
-                    </tr>
-                `;
-
                 const economPrime = ((1 - p.prime / p.total) * 100).toFixed(0);
+                const economBP = ((1 - p.bp / p.total) * 100).toFixed(0);
                 clubBody.innerHTML += `
                     <tr>
                         <td class="p-4 font-medium">${p.n}</td>
-                        <td class="p-4 text-xs">Sim (${((1 - p.bp / p.total) * 100).toFixed(0)}% off)</td>
+                        <td class="p-4 text-xs">Sim (${economBP}% off)</td>
                         <td class="p-4 text-xs font-bold text-teal-600">${economPrime > 0 ? 'Sim (' + economPrime + '% off)' : 'Não'}</td>
+                        <td class="p-4 text-slate-600">R$ ${p.a.toFixed(2)}</td>
+                        <td class="p-4 text-slate-600">${p.c > 0 ? 'R$ ' + p.c.toFixed(2) : '<span class="text-teal-600 font-medium">Grátis</span>'}</td>
+                        <td class="p-4 text-right font-bold text-teal-700">R$ ${p.total.toFixed(2)}</td>
                         <td class="p-4 text-right">
                             <span class="bg-teal-100 text-teal-700 px-2 py-1 rounded text-[10px] font-bold uppercase">
                                 ${economPrime >= 40 ? 'PRIME GOURMET' : 'BALNEÁRIO PASS'}
@@ -438,16 +417,41 @@
                         data: [tBruto, tPrime, tBP],
                         backgroundColor: ['#94a3b8', '#f59e0b', '#3b82f6'],
                         borderRadius: 10,
-                        barThickness: 35
+                        maxBarThickness: 60
                     }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
+                    indexAxis: 'y',
                     plugins: { legend: { display: false } },
                     scales: {
-                        y: { beginAtZero: true, grid: { display: false } },
-                        x: { grid: { display: false } }
+                        x: { beginAtZero: true, grid: { display: false } },
+                        y: { grid: { display: false } }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('distributionChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: priceData.map(p => p.n),
+                    datasets: [{
+                        data: priceData.map(p => p.total),
+                        backgroundColor: [
+                            '#0d9488', '#14b8a6', '#2dd4bf', '#99f6e4', '#ccfbf1',
+                            '#5eead4', '#06b6d4', '#22d3ee', '#06b6d4', '#00bcd4'
+                        ],
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { size: 11 }, padding: 15 } },
+                        tooltip: { callbacks: { label: (context) => `R$ ${context.parsed.toFixed(2)}` } }
                     }
                 }
             });
