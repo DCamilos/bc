@@ -7,6 +7,7 @@
     <title>Roteiro Família: Balneário Camboriú 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -83,11 +84,13 @@
                 </ul>
             </div>
             <div class="bg-white p-6 rounded-2xl custom-shadow border border-slate-100">
-                <h3 class="flex items-center gap-2 text-teal-700 font-bold mb-4 uppercase text-sm">🏨 Hospedagem:
-                    Slaviero Brut</h3>
+                <a href= "https://www.slavierohoteis.com.br/hoteis/brut-by-slaviero-hoteis">
+                <h3 class="flex items-center gap-2 text-teal-700 font-bold mb-4 uppercase text-sm" >
+                    🏨 Hospedagem: Slaviero Brut</h3> </a>
                 <ul class="text-sm space-y-2 text-slate-600">
                     <li>• Localização: Barra Norte, próximo à Big Wheel.</li>
-                    <li>• Dica: Estratégico para evitar trânsito do centro sul.</li>
+                    <li>• Localização: Rua 1901, 269 - Centro Balneário Camboriú</li>
+                    <li>• Whats App: +55 (47) 3081-9606 </li>
                 </ul>
             </div>
         </section>
@@ -449,10 +452,20 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
+                    layout: { padding: 10 },
                     plugins: {
                         legend: { position: 'bottom', labels: { font: { size: 11 }, padding: 15 } },
-                        tooltip: { callbacks: { label: (context) => `R$ ${context.parsed.toFixed(2)}` } }
-                    }
+                        tooltip: {
+                            callbacks: {
+                                label: (context) => {
+                                    const value = context.parsed;
+                                    const total = context.dataset.data.reduce((sum, item) => sum + item, 0);
+                                    const percent = total ? ((value / total) * 100).toFixed(1) : '0.0';
+                                    return `${context.label}: R$ ${value.toFixed(2)} (${percent}%)`;
+                                }
+                            }
+                        },
+                        }
                 }
             });
         }
