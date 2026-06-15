@@ -13,6 +13,9 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        a {
+            transition: all 0.2s ease;
+        }
 
         .tab-active {
             border-bottom: 3px solid #0d9488;
@@ -304,6 +307,7 @@
             },
             3: {
                 title: "03/09 – Beto Carrero World", items: [
+                    { t: "Dia Todo", act: "Beto Carrero World", d: "Clique para ver o planejamento estratégico detalhado para este dia.", link: "beto-carrero.html" },
                     { t: "Manhã", act: "Saída para Penha", d: "Saída às 08:30. Foco em Triplikland e Mundo Animal." },
                     { t: "Almoço", act: "Praça de Alimentação BCW", d: "Pausa para shows." },
                     { t: "Noite", act: "Besst Burger", prime: "Sim", d: "Jantar de retorno em BC." }
@@ -369,7 +373,10 @@
                     ${day.items.map(i => `
                         <div class="bg-white p-4 rounded-xl border border-slate-200">
                             <div class="flex justify-between items-center">
-                                <span class="font-bold text-slate-800">${i.act}</span>
+                                ${i.link 
+                                    ? `<a href="${i.link}" class="font-bold text-teal-600 hover:underline">${i.act} ➔</a>` 
+                                    : `<span class="font-bold text-slate-800">${i.act}</span>`
+                                }
                                 ${i.prime === "Sim" ? `<span class="prime-badge">PRIME GOURMET</span>` : ''}
                             </div>
                             <p class="text-xs text-slate-500 mt-1 uppercase font-semibold">${i.t}</p>
